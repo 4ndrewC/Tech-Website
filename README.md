@@ -1,7 +1,7 @@
 # Basis-Tech-Website
-**Please read this stuff, it's quite important**
+_**Please read this stuff, it's quite important**_
 
-**Public folder (frontend): **
+**Public folder (frontend):**
 Static files only (frontend js, css, etc.) all css and js files that you want to be connected to html (ejs) pages should be put into the public folder. Remember to use the correct directory when you link these files in the html.
 
 **Views folder (frontend):**
