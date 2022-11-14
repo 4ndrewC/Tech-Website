@@ -11,10 +11,18 @@ app.set('view engine', 'ejs')
 
 
 app.get("/", async (req, res) => {
-    const content = await db.promise().query(`select * from submissions`);
-    console.log(content);
+    const content = await db.promise().query(`select * from submission`);
+    console.log(content[0]);
     res.render('index');
 })
 
+//import new modules (routes)
+const submissionRouter = require('./routes/submission')
+
+//add new routes
+app.use('/submission', submissionRouter)
+
+//use static files
+app.use('/public', express.static('public'))
 
 app.listen(8000)
