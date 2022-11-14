@@ -1,0 +1,13 @@
+#form{
+    width: 30%;
+    height: 50%;
+    text-align: center;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    margin: 20px;
+
+    background-color: #FFF;
+}
+body{
+    background-color: #DDDDDD;
+}
