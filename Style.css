@@ -5,7 +5,8 @@
     border: 2px solid #FFF;
     border-radius: 5px;
     margin: 20px;
-
+    font-family: 'Times New Roman';
+    font-size: 5px;
     background-color: #FFF;
 }
 body{
