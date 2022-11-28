@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="nav.css">
+
+</head>
+<body>
+  <script> 
+    const searchBar = document.forms['search-books'].querySelector('input'),
+    books = document.querySelectorAll('.container h2');
+    searchBar.addEventListener('keyup', function(e) {
+    
+    let term = e.target.value.toLocaleLowerCase();
+    books.forEach(el => {
+      let title = el.innerText;
+      if (title.toLowerCase().indexOf(term) != -1) {
+     
+        el.parentElement.parentElement.style.display = 'block';
+      } else {
+        el.parentElement.parentElement.style.display = 'none';
+      }
+    })
+  })
+    </script>
+  <div id = "header">
+    This is the banner
+
+  </div>
+  <div id = "nav"></div>
+  <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#">Submission page</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+         </li>
+     <li><a href="#search">Dynamic Search</a></li>
+       <li>
+        <form id="search-books">
+          <input type="text" placeholder="Search a book ... ">
+        </form>
+       </li> 
+
+        </div>     
+     
+      </ul>
+  </div>
+
+  
+<div id = "center1">
+  <h1> WELCOME TO THE BIBS-C TEACHING WITH TECH TOOLBOX</h1>
+  </div>
+
+  <div id = "container">
+ <div class="row">
+    <div class="column side">
+      <h2>Padlet</h2>
+      <img src = "https://bgtechtools.weebly.com/uploads/8/1/8/3/81830950/252290125_orig.jpg" width="400px" height="200px"> </img> 
+    </div>    
+    <div class="column middle">
+      <h3>About padlet</h3>
+      <p>Padlet is a digital tool that can help teachers and students in class and beyond by offering a single place for a notice board. It allows teachers and students to curate information onto virtual boards that allow users to easily express their thoughts on a common topic and read what others have to say.  </p>
+      
+    </div>
+  </div>
+    <div class="row">
+      <div class="column side">
+        <h2>Side</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+      </div>
+      </div>
+      
+      <!-- <div class="column middle">
+        <h2>Main Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      </div> 
+       <div class="row">
+        <div class="column side">
+          <h2>Side</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+        </div>
+        </div>
+        <div class="column middle">
+          <h2>Main Content</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>  -->
+ </div>    
+ <!-- <div id = "footer">
+  <h1> footer</h1>
+</div> -->
+</div>
+</body>
+</html>
+
