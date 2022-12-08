@@ -4,8 +4,7 @@ const router = express.Router();
 const db = require('../database');
 
 router.get("/", async (req, res) => {
-    res.render('submission');
-    await db.promise().query(`insert into submission values(1, 'your mom', 'your mom', 0, true, 'your mom', 'your mom')`);
+    res.render('submissionpage');
 })
 
 router.post("/", async (req, res) => {
