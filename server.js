@@ -28,10 +28,16 @@ app.post("/", async (req, res) => {
 //import new modules (routes)
 const submissionRouter = require('./routes/submission')
 const tl1Router = require('./routes/tl1')
+const tl1Router = require('./routes/tl2')
+const tl1Router = require('./routes/tl3')
+const tl1Router = require('./routes/tl4')
 
 //add new routes
 app.use('/submission', submissionRouter)
 app.use('/tl1', tl1Router)
+app.use('/tl2', tl1Router)
+app.use('/tl3', tl1Router)
+app.use('/tl4', tl1Router)
 
 //use static files
 app.use('/public', express.static('public'))
