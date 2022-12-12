@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            display: grid;
+            grid-template: 150px / auto auto auto;
+            grid-gap: 170px;
+            padding: 10px;
+            background-color: white;
+            box-sizing: border-box;
+        }
+
+        .container>div {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        img {
+            height: 130px;
+            width: 200px;
+            border-radius: 8px;
+        }
+        input[type=text] {
+            width: 200px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px ;
+            transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>The search page</h1>
+    <form id="search-books">
+        <input type="text" placeholder="Search a techtool ... ">
+    </form>
+    
+    <p>This grid layout has three columns, and the first row is 150px high:</p>
+    <div class="container">
+        <!-- <div class="grid-container"> -->
+            <div class="item1">
+                <div>
+                    <div id = "pics">
+                    <img src="https://bgtechtools.weebly.com/uploads/8/1/8/3/81830950/252290125_orig.jpg" />
+                        </div>
+                     <div> 
+                    <h5>Padlet</h5>
+                    <p>padlet:For studios and other collaborative work, Padlet is a simple and user-friendly platform to
+                        accommodate
+                        online or hybrid learning</p>
+                    </div>  
+                </div>
+            </div>
+            <div class="item2">
+                <div id = "pics">
+                <img   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" />
+                    </div>
+                <div>
+                <h5>Teams</h5>
+                <p>Teams:teams is software for students and teachers to commuicae</p></div>
+            </div>
+            <div class="item3">
+                <div id = "pics">
+                <img  src="https://phet.colorado.edu/images/phet-logo-trademarked.png" /></div>
+                <div>
+                <h5>Phet</h5>
+                <p>Phet: Interactive Simulations for Science and Math</p></div>
+            </div>
+            <div class="item3">
+                <div id = "pics">
+                <img  src="https://phet.colorado.edu/images/phet-logo-trademarked.png" /></div>
+                <div>
+                <h5>Phet</h5>
+                <p>Phet: Interactive Simulations for Science and Math</p></div>
+            </div>
+            <div class="item3">
+                <div id = "pics">
+                <img  src="https://phet.colorado.edu/images/phet-logo-trademarked.png" /></div>
+                <div>
+                <h5>Phet</h5>
+                <p>Phet: Interactive Simulations for Science and Math</p></div>
+            </div>
+            <!-- <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div> -->
+        <!-- </div> -->
+    </div>
+    <script type="text/javascript">
+        const searchBar = document.forms['search-books'].querySelector('input'),
+            books = document.querySelectorAll('.container h5');
+        searchBar.addEventListener('keyup', function (e) {
+
+            let term = e.target.value.toLocaleLowerCase();
+            books.forEach(el => {
+                let title = el.innerText;
+                if (title.toLowerCase().indexOf(term) != -1) {
+                    el.parentElement.parentElement.style.display = 'block';
+                    el.parentElement.parentElement.style = 'center';
+                } else {
+                    el.parentElement.parentElement.style.display = 'none';
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
