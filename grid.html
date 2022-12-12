@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template: 150px / auto auto auto;
+            grid-gap: 100px;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        img {
+            height: 130px;
+            width: 200px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The grid-template Property</h1>
+    <form id="search-books">
+        <input type="text" placeholder="Search a techtool ... ">
+    </form>
+    <p>The grid-template property can be used as a shorthand property for the <em>grid-template-rows</em> and the
+        <em>grid-template-columns</em> properties.
+    </p>
+    <p>This grid layout has three columns, and the first row is 150px high:</p>
+    <div class="container">
+        <div class="grid-container">
+            <div class="item1">
+                <img src="https://bgtechtools.weebly.com/uploads/8/1/8/3/81830950/252290125_orig.jpg" />
+                <h5>Padlet</h5>
+                <p>padlet:For studios and other collaborative work, Padlet is a simple and user-friendly platform to
+                    accommodate
+                    online or hybrid learning</p>
+            </div>
+            <div class="item2">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" />
+                <h5>Teams</h5>
+                <p>For studios and other collaborative work, Padlet is a simple and user-friendly platform to
+                    accommodate
+                    online or hybrid learning</p>
+            </div>
+            <div class="item3">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg/1200px-Microsoft_Office_Teams_%282018%E2%80%93present%29.svg.png" />
+                <p>For studios and other collaborative work, Padlet is a simple and user-friendly platform to
+                    accommodate
+                    online or hybrid learning</p>
+            </div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const searchBar = document.forms['search-books'].querySelector('input'),
+            books = document.querySelectorAll('.container h5');
+        searchBar.addEventListener('keyup', function (e) {
+
+            let term = e.target.value.toLocaleLowerCase();
+            books.forEach(el => {
+                let title = el.innerText;
+                if (title.toLowerCase().indexOf(term) != -1) {
+                    el.parentElement.parentElement.style.display = 'block';
+                } else {
+                    el.parentElement.parentElement.style.display = 'none';
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
