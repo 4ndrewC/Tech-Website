@@ -7,13 +7,13 @@
     <title>TL1</title>
 </head>
 <body>
-    <% if (content.length > 0){ content.forEach(tech => { %>
-        <% if(tech.tl2==true){ %>
-            <div class="tech">
-                <h2 class="techname"><%=tech.techname%></h2>
-                <text class="description"><%=tech.description%></text>
-            </div>
-        <% } %>
+    <% if (content[0].length > 0){ content[0].forEach(tech => { %>
+        
+        <div class="tech">
+            <h2 class="techname"><%=tech.techname%></h2>
+            <text class="description"><%=tech.description%></text>
+        </div>
+    
     <% } ) } %>
      
 </body>
