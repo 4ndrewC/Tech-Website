@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>BIBS·C Tech Tips</title>
-		<link rel = "stylesheet" href = "../.public/main.css">
+		<link rel = "stylesheet" href = "../public/main.css">
 		<link rel = "icon" href = "icon.png">
 		<meta name = "viewport" content = "width=device-width, initial-scale=1">
 		<meta charset = "utf-8">
@@ -13,15 +13,15 @@
 			</div> 
 			<div id = "navbar">
 				<ul id = "nav">
-					<a href = "index"><li>Home</li><div class = "underline"></div></a>
-	                <a href = "tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
-	                <a href = "tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
-	                <a href = "tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
-	                <a href = "tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
+					<a href = "/"><li>Home</li><div class = "underline"></div></a>
+	                <a href = "/tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
+	                <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
+	                <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
+	                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
 				</ul>
 			</div>
 			<div id = "front">
-				<img src = "../.src/laptop.jpg">
+				<img src = "../src/laptop.jpg">
 				<h1>Welcome to BASIS International and Bilingual Schools China Tech Tips</h1>
 			</div>
 		</div>
@@ -30,10 +30,8 @@
 
 		<script type = "text/javascript">
 			window.onscroll = function() {myFunction()};
-
 			var header = document.getElementById("navbar");
 			var sticky = header.offsetTop;
-
 			function myFunction() {
 				if (window.pageYOffset > sticky) {
 					header.classList.add("sticky");
