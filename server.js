@@ -11,7 +11,7 @@ app.set('view engine', 'ejs')
 
 
 app.get("/", async (req, res) => {
-    const content = await db.promise().query(`select * from submission`);
+    const content = await db.promise().query(`select * from submissions`);
     // console.log(content[0]);
     res.render('index');
 })
@@ -28,16 +28,16 @@ app.post("/", async (req, res) => {
 //import new modules (routes)
 const submissionRouter = require('./routes/submission')
 const tl1Router = require('./routes/tl1')
-const tl1Router = require('./routes/tl2')
-const tl1Router = require('./routes/tl3')
-const tl1Router = require('./routes/tl4')
+const tl2Router = require('./routes/tl2')
+const tl3Router = require('./routes/tl3')
+const tl4Router = require('./routes/tl4')
 
 //add new routes
 app.use('/submission', submissionRouter)
 app.use('/tl1', tl1Router)
-app.use('/tl2', tl1Router)
-app.use('/tl3', tl1Router)
-app.use('/tl4', tl1Router)
+app.use('/tl2', tl2Router)
+app.use('/tl3', tl3Router)
+app.use('/tl4', tl4Router)
 
 //use static files
 app.use('/public', express.static('public'))
