@@ -150,6 +150,7 @@ a .underline{
 	padding-top: 5%;
 	padding-bottom: 5%;
 }
+
 /*list*/
 .techtip-wrap{
 	width:90%;
@@ -159,31 +160,43 @@ a .underline{
 	border: 2px solid #000;
 	box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.7);
 }
-.techtip{
-	height: 10vw;
+.techtip .info{
 	display: flex;
-}
-.techtip a{
-	text-decoration: none;
-	color: #3255A4;
-}
-.techtip .text{
-	margin-left: 5%;
-}
-.techtip .text *{
-	margin: 0;
-}
-.techtip h4{
-	font-size: 20px;
-	padding-bottom: 5px;
-}
-.techtip h5{
-	font-size: 16px;
-	padding-bottom: 10px;
+	margin-top: 10px;
 } 
-.techtip p{
-	font-size: 16px;
+.techtip .img, .techtip .desc, .techtip .link{
+	display: inline-block;
 }
+.techtip h3{
+	font-size: 26px;
+	margin: 0;
+	margin-bottom: 4px;
+}
+.techtip .tags span{
+	padding: 2px 4px;
+	background: #EAEAEA;
+	border-radius: 10px;
+	font-size: 14px;
+}
+.techtip .img{
+	width: 25%;
+}
+.techtip img{
+	width: 100%;
+}
+.techtip .desc{
+	width: 40%;
+	padding: 5px 0 0 0;
+}
+.techtip .link{
+	width: 35%;
+	padding: 5px 0 0 40px;
+}
+.techtip ul{
+	margin: 0;
+
+}
+
 
 /*js elements*/
 .sticky {
@@ -222,6 +235,19 @@ a .underline{
 
 	.wrapper{
 		width:100%;
+	}
+
+	/*list*/
+	.techtip .info{
+		display: block;
+	}
+	.techtip .img, .techtip .desc, .techtip .link{
+		display: block;
+		width: 100%;
+	}
+	.techtip .link{
+		padding-left: 0px;
+		padding-top: 20px;
 	}
 	/*js elements*/
 	.sticky{
