@@ -182,6 +182,21 @@ a .underline{
 	border-radius: 10px;
 	font-size: 14px;
 }
+.techtip .tags .n1{
+	background: #0CF293;
+}
+.techtip .tags .n2{
+	background: #0DFCE5;
+}
+.techtip .tags .n3{
+	background: #00B8E6;
+}
+.techtip .tags .n4{
+	background: #0082FF;
+}
+.techtip .tags .n5{
+	background: #0137FA;
+}
 .techtip .img{
 	width: 25%;
 }
