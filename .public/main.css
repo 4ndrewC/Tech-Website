@@ -150,6 +150,11 @@ a .underline{
 	padding-top: 5%;
 	padding-bottom: 5%;
 }
+#bar{
+	height: 40px;
+	background: #3255A4;
+	font-size:1.2vw;
+}
 
 /*list*/
 .techtip-wrap{
@@ -157,7 +162,6 @@ a .underline{
 	margin:auto;
 	background: #FFF;
 	padding: 20px;
-	border: 2px solid #000;
 	box-shadow: 0px 3px 3px 3px rgba(0,0,0,0.7);
 }
 .techtip .info{
@@ -196,7 +200,12 @@ a .underline{
 	margin: 0;
 
 }
-
+.techtip .line{
+	background: #3255A4;
+	height:4px;
+	margin: 20px 0px;
+	width:100%;
+}
 
 /*js elements*/
 .sticky {
