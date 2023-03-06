@@ -1,6 +1,10 @@
 html{
 	overflow-y: scroll;
 }
+img{
+	aspect-ration: 1/1;
+	object-fit: contain;
+}
 body{
 	margin: 0px;
 	background: #000;
