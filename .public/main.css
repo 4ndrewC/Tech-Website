@@ -140,6 +140,21 @@ a .underline{
 	background: #D0E2FF;
 }
 
+/*Descriptions*/
+.des{
+	width: 800px;
+	margin: auto;
+}
+.description{
+    width: 100px;
+	height:100px;
+    float:left;
+	margin: 0px 50px;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 10000px;
+}
+
 /*subpage*/
 #subhead{
 	background: #FFF;
@@ -228,12 +243,11 @@ a .underline{
 }
 
 /*js elements*/
-.sticky {
-	position: fixed;
-	width: 100%;
-	top: 0;
+.description{
+    width: 100
+    border-radius: 1000px;
+    background-color: #3255A4;
 }
-
 /*mobile optimization*/
 @media only screen and (max-width: 880px){
 	#cover, #nav, #topbar{
