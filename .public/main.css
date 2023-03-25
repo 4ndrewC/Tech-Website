@@ -142,17 +142,18 @@ a .underline{
 
 /*Descriptions*/
 .des{
-	width: 800px;
+	width: 1000px;
 	margin: auto;
 }
-.description{
-    width: 100px;
-	height:100px;
-    float:left;
-	margin: 0px 50px;
+.descriptions{
+    width: 200px;
+	height:200px;
+	float:left;
+	margin: 0px 25px;
 	text-align: center;
 	line-height: 100px;
 	border-radius: 10000px;
+	background-color: #3255a2;
 }
 
 /*subpage*/
@@ -244,7 +245,7 @@ a .underline{
 
 /*js elements*/
 .description{
-    width: 100
+    width: 100;
     border-radius: 1000px;
     background-color: #3255A4;
 }
@@ -279,7 +280,21 @@ a .underline{
 	.wrapper{
 		width:100%;
 	}
-
+	/*Descriptions*/
+	.des{
+		width: 100%;
+		margin: auto;
+	}
+	.descriptions{
+		width: 50%;
+		height:100px;
+		float:left;
+		margin:  0px;
+		text-align: center;
+		line-height:normal;
+		border-radius: 0px;
+		border: 1px solid #FFF;
+	}
 	/*list*/
 	.techtip .info{
 		display: block;
