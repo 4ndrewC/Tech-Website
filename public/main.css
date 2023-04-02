@@ -1,0 +1,445 @@
+html{
+	overflow-y: scroll;
+}
+body{
+	margin: 0px;
+	background: #3255A4;
+}
+body *{
+	box-sizing: border-box;
+	font-family: arial;
+}
+
+.clearfix {
+	overflow: auto;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.techtip .tags .n1{
+	background: #0CF293;
+}
+.techtip .tags .n2{
+	background: #0DFCE5;
+}
+.techtip .tags .n3{
+	background: #00B8E6;
+}
+.techtip .tags .n4{
+	background: #0082FF;
+}
+.techtip .tags .n5{
+	background: #0137FA;
+}
+
+
+.submit{
+	text-align: center;
+}
+button{
+	background: linear-gradient(to right, #114ea8, #33b4df, #6ebee0);
+	border: none;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 20%;
+}
+
+/*cover*/
+#cover{
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	position: relative;
+	height: 100%;
+}
+
+#cover #topbar #navbar{
+	flex: 0 1 auto;
+}
+
+#cover #front{
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	color: #FFF;
+	z-index: -1;
+	padding:50px 0px;
+}
+
+#front img{
+	width: 105%;
+	filter: blur(10px);
+	position: absolute;
+	top: 0;
+	left:-10px;
+	overflow: hidden;
+	display: block;
+	z-index:-10;
+}
+
+#front h1{
+	position: relative;
+	z-index: 99;
+	width: 75%;
+	font-size: 5vw;
+	color: #FFF;
+	margin-left: 5%;
+	padding-bottom: 5%;
+}
+
+/*banner, navbar*/
+#topbar{
+	background: #FFF;
+	padding: 10px;
+	padding-bottom: 5px;
+}
+#topbar h1{
+	color: #3255A4;
+	font-size: 2.1vw;
+	font-style: italic;
+	margin: 0;
+	padding-bottom: 5px;
+}
+#topbar hr{
+	height: 2px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background: #FFF;
+}
+
+#navbar{
+	background: #3255A4;	
+	box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.5);
+	z-index: 100;
+	position: sticky;
+	top:0;
+}
+
+#nav{
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.2vw;
+}
+
+
+#nav li{
+	width: 100%;
+	padding: 5px 20px;
+	position: relative;
+	display: block;
+	align-items: center;
+	text-align: center;
+	color: #FFF;
+	transition: .75s ease;
+}
+
+#nav a{
+	text-decoration: none;
+	padding-bottom: 2px;
+	position: relative;
+}
+
+a .underline{
+	height: 2px;
+	width: 0;
+	background: #3255A4;
+	margin: auto;
+	transition: .5s ease;
+}
+
+#nav a:hover li{
+	background: #78A9ff;
+	color: #000;
+	transition: .75s ease;
+}
+
+#nav a:hover .underline{
+	background: #FFF;
+	width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+	margin-top: 100px;
+}
+
+/*homepage content*/
+.tl-section{
+	padding:10px;
+	display: flex;
+	justify-content: center;
+}
+#basicinfo a{
+	text-decoration:none;
+}
+#basicinfo .tl-section a{
+	display:inline-block;
+	margin: 10px;
+
+}
+.tlx {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border: 1px solid #FFF;
+	background-color: #3255A4;
+	color: #FFF;
+	box-shadow: 0px 2px 5px 0px rgb(0, 0, 0, .75);
+	border-radius: 5px;
+	margin-bottom: 10px;
+	transition: .5s ease;
+	cursor: pointer;
+}
+
+.tlx:hover{
+	background: #78A9FF;
+	color: #000;
+	transition: .75s ease;
+}
+.tlhead {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#all #basicinfo{
+	padding: 10px;
+	background: #FFF;
+}
+#basicinfo h1{
+	margin-bottom:0;
+}
+
+
+
+ /* Style the search box inside the navigation bar */
+#nav .search-container {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 6px;
+	border: none;
+	margin-bottom: 2px;
+	margin-right: 10px;
+	font-size: 1.2vw;
+  }
+
+/*all*/
+#all{
+	background: #D0E2FF;
+}
+
+/*subpage*/
+#subhead{
+	background: #FFF;
+}
+#subhead h1{
+	position: relative;
+	z-index: 99;
+	width: 75%;
+	font-size: 5vw;
+	color: #3255A4;
+	margin: 0;
+	margin-left: 5%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+#bar{
+	height: 40px;
+	background: #3255A4;
+	font-size:1.2vw;
+}
+/* scroll to top btn*/
+#topbutton {
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: rgb(0, 102, 255); /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 15px; /* Some padding */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 18px; /* Increase font size */
+ }
+  
+#topbutton:hover {
+	background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+/*list*/
+.techtip-wrap{
+	width:95%;
+	margin:auto;
+	background: #FFF;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.7);
+	opacity: 1;
+	background-color: #f9fdff;
+}
+.techtip .info{
+	display: flex;
+	margin-top: 10px;
+} 
+.techtip .img, .techtip .desc, .techtip .link{
+	display: inline-block;
+}
+.techtip h3{
+	font-size: 26px;
+	margin: 0;
+	margin-bottom: 4px;
+}
+.techtip .tags span{
+	padding: 2px 4px;
+	background: #EAEAEA;
+	border-radius: 10px;
+	font-size: 14px;
+}
+
+.techtip .img{
+	width: 25%;
+}
+.techtip img{
+	width: 100%;
+}
+.techtip .desc{
+	width: 40%;
+	padding: 5px 0 0 0;
+}
+.techtip .link{
+	width: 35%;
+	padding: 5px 0 0 40px;
+}
+.techtip ul{
+	margin: 0;
+
+}
+.techtip .line{
+	background: #3255A4;
+	height:4px;
+	margin: 20px 0px;
+	width:100%;
+}
+
+/*js elements*/
+.sticky {
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
+
+/*mobile optimization*/
+@media only screen and (max-width: 880px){
+	
+	#cover, #nav, #topbar{
+		height: auto;
+	}
+	#cover #front{
+		display: block;
+		padding: 0;
+	}
+	#cover #front img{
+		position: static;
+	}
+	#cover #front h1{
+		position: absolute;
+		top: 0;
+		padding-top: 15px;
+		font-size: 8vw;
+		width: auto;
+	}
+	#topbar h1{
+		font-size: 5vw;
+	}
+	#nav{
+		display: block;
+	}
+	#nav a{
+		height: auto;
+		width: 100%;
+		font-size: 4vw;
+	}
+
+	.wrapper{
+		width:100%;
+	}
+
+	/*list*/
+	.techtip .info{
+		display: block;
+	}
+	.techtip .img, .techtip .desc, .techtip .link{
+		display: block;
+		width: 100%;
+	}
+	.techtip .link{
+		padding-left: 0px;
+		padding-top: 20px;
+	}
+
+	.topnav a, .topnav input[type=text] {
+		float: none;
+		display: block;
+		text-align: left;
+		width: 100%;
+		margin: 0;
+		padding: 14px;
+	}
+	.topnav input[type=text] {
+		border: 1px solid #ccc;
+	}
+  
+	/*tl description (homepage)*/
+	.tl-section {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.tlhead {
+		font-size: 18px;
+	}
+	p {
+		font-size: 16px;
+		line-height: 1.4;
+		margin-bottom: 10px;
+	}
+	#basicinfo .tl-section a{
+		padding: 5px 0px;
+		margin:0;
+	}
+
+	/* subpage*/
+	#subhead h1{
+		font-size:8vw;
+	}
+	#basicinfo button{
+		display:block;
+		width: 100%;
+	}
+  
+}

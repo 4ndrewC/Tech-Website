@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>TL1: Knowing</title>
+        <title>TL3: Evidence</title>
         <link rel = "stylesheet" href = "../public/main.css">
         <link rel = "icon" href = "icon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
             </ul>           
         </div>
         <div id = "subhead">
-            <h1 id="test">TL1: Knowing Our Students</h1>
+            <h1 id="test">TL3: Evidence for Learning</h1>
             
         </div>
 
@@ -57,22 +57,19 @@
 
                 <% for(let i=0; i<content[0].length; i++){ %>
 
-                <% if((content[1][i]["R"]&&checked[0])||(content[1][i]["TP"]&&checked[1])||(content[1][i]["MT"]&&checked[2])||(content[1][i]["AR"]&&checked[3])){ %>
+                <% if((content[1][i]["RoThink"]&&checked[0])||(content[1][i]["EoST"]&&checked[1])||(content[1][i]["EF"]&&checked[2])&&checked[3]){ %>
 
                 <div class = "techtip">
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
                     <div class = "tags">
-                        <% if(content[1][i]["R"]){ %>
+                        <% if(content[1][i]["RoThink"]){ %>
                             <span class = "n1">Relationships</span>
                         <% } %>
-                        <% if(content[1][i]["TP"]){ %>
+                        <% if(content[1][i]["EoST"]){ %>
                             <span class = "n2">Teacher Planning</span>
                         <% } %>
-                        <% if(content[1][i]["MT"]){ %>
+                        <% if(content[1][i]["EF"]){ %>
                             <span class = "n3">Modify their Teaching</span>
-                        <% } %>
-                        <% if(content[1][i]["AR"]){ %>
-                            <span class = "n4">Achieve Readiness</span>
                         <% } %>
                     </div>
                     <div class = "info">
@@ -87,7 +84,7 @@
                     <div class = "line"></div>
                 </div>
                 <% } %> 
-                <% } %>
+                <% } %> 
                 <% } %>
             </div>
         </div>

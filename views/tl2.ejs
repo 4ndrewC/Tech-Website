@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>TL1: Knowing</title>
+        <title>TL2: Strategies</title>
         <link rel = "stylesheet" href = "../public/main.css">
         <link rel = "icon" href = "icon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
@@ -20,18 +20,14 @@
             </ul>           
         </div>
         <div id = "subhead">
-            <h1 id="test">TL1: Knowing Our Students</h1>
-            
+            <h1 id="test">TL2: Strategies for Learning</h1>
         </div>
 
         <div id = "bar">&nbsp;</div>
         
-        <div>
-            
-        </div>
         <div id = "all">
             <div>
-                <form class = "filters" method = "post" action='/tl3'>
+                <form class = "filters" method = "post" action='/tl2'>
                     <span class = "n1">Strand 1 <input type = "checkbox" name = "s1" class = "checkf" value = "1"></span>
                     <span class = "n2">Strand 2 <input type = "checkbox" name = "s2" class = "checkf" value = "1"></span>
                     <span class = "n3">Strand 3 <input type = "checkbox" name = "s3" class = "checkf" value = "1"></span>
@@ -39,7 +35,7 @@
                     <button type="submit" name="filter" >Filter by strand</button>
                 </form>
     
-                <form action="/tl3/:query" method="get">
+                <form action="/tl2/:query" method="get">
                     <input type="text" name="query" placeholder="Search">
                     <input type="submit" value="Submit">
                 </form>
@@ -48,46 +44,47 @@
             <%# <h1>TL3: Evidence</h1> %>                
             <br>    
             <div class = "techtip-wrap">
-
                 <% if(content[0].length==0){ %>
                     <div>
                         <h4>There is nothing here</h4>
                     </div>
                 <% } else { %>
+                    <% for(let i=0; i<content[0].length; i++){ %>
 
-                <% for(let i=0; i<content[0].length; i++){ %>
+                    <% if((content[1][i]["U"]&&checked[0])||(content[1][i]["MDL"]&&checked[1])||(content[1][i]["RA"]&&checked[2])||(content[1][i]["RoTech"]&&checked[3])||(content[1][i]["LS"]&&checked[4])){ %>
 
-                <% if((content[1][i]["R"]&&checked[0])||(content[1][i]["TP"]&&checked[1])||(content[1][i]["MT"]&&checked[2])||(content[1][i]["AR"]&&checked[3])){ %>
-
-                <div class = "techtip">
-                    <h3 class="name"><%= content[0][i]["techname"] %></h3>
-                    <div class = "tags">
-                        <% if(content[1][i]["R"]){ %>
-                            <span class = "n1">Relationships</span>
-                        <% } %>
-                        <% if(content[1][i]["TP"]){ %>
-                            <span class = "n2">Teacher Planning</span>
-                        <% } %>
-                        <% if(content[1][i]["MT"]){ %>
-                            <span class = "n3">Modify their Teaching</span>
-                        <% } %>
-                        <% if(content[1][i]["AR"]){ %>
-                            <span class = "n4">Achieve Readiness</span>
-                        <% } %>
-                    </div>
-                    <div class = "info">
-                        <div class = "img"><img src = "/testuploads/<%=i+1%>.png"></div>
-                        <div class = "desc"><%= content[0][i]["description"] %></div>
-                        <div class = "link">
-                            <ul>
-                                <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
-                            </ul>
+                    <div class = "techtip">
+                        <h3 class="name"><%= content[0][i]["techname"] %></h3>
+                        <div class = "tags">
+                            <% if(content[1][i]["U"]){ %>
+                                <span class = "n1">Relationships</span>
+                            <% } %>
+                            <% if(content[1][i]["MDL"]){ %>
+                                <span class = "n2">Teacher Planning</span>
+                            <% } %>
+                            <% if(content[1][i]["RA"]){ %>
+                                <span class = "n3">Modify their Teaching</span>
+                            <% } %>
+                            <% if(content[1][i]["RoTech"]){ %>
+                                <span class = "n4">Achieve Readiness</span>
+                            <% } %>
+                            <% if(content[1][i]["LS"]){ %>
+                                <span class = "n5">Achieve Readiness</span>
+                            <% } %>
                         </div>
+                        <div class = "info">
+                            <div class = "img"><img src = "/testuploads/<%=i+1%>.png"></div>
+                            <div class = "desc"><%= content[0][i]["description"] %></div>
+                            <div class = "link">
+                                <ul>
+                                    <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class = "line"></div>
                     </div>
-                    <div class = "line"></div>
-                </div>
-                <% } %> 
-                <% } %>
+                    <% } %> 
+                    <% } %>
                 <% } %>
             </div>
         </div>
