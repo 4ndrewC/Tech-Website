@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>        
+		<title>Admin Management</title>
+		<link rel = "stylesheet" href = "./public/main.css">
+		<link rel = "icon" href = "icon.png">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		<meta charset = "utf-8">
+		  <script src="/jquery/jquery.min.js"></script>
+	</head>
+	<style>
+		body{
+			background: #001141;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #fff;
+		}
+		#techtools{
+			margin: 20px;
+			display: block;
+			box-sizing: border-box;
+			overflow-x: scroll;
+			border-collapse: collapse;
+		}
+
+		#techtools .cell, #techtools .head{
+			border: 1px solid #ddd;
+			padding: 8px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#techtools .row{
+			display: table-row;
+			background: #D0E2ff;
+			width:100%;
+			color: #000;
+		}
+		#techtools .row:nth-child(even){background-color: #EDF5FF;}
+
+		#techtools .row:hover {background-color: #A6C8FF;}
+
+		#techtools .head{
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #001d6c;;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 14px;
+			min-width: 11.12%;
+
+		}
+
+		h1, h2{
+			padding: 0px 20px;
+			margin:0;
+			color: #FFF;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 36px;
+			text-align: center;
+		}
+
+		h2{
+			font-size: 24px;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+
+		button{
+			background-color: #001d6c;
+			color: #fff;
+			border: none;
+			padding: 8px 16px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover{
+			background-color: #fff;
+			color: #001d6c;
+		}
+
+		form{
+			display: inline-block;
+		}
+		.overlay {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.7);
+			transition: opacity 500ms;
+			visibility: hidden;
+			opacity: 0;
+			}
+			.overlay:target {
+			visibility: visible;
+			opacity: 1;
+			}
+
+			.popup {
+			margin: 70px auto;
+			padding: 10px;
+			background: #fff;
+			border-radius: 5px;
+			width: 30%;
+			position: relative;
+			transition: all 5s ease-in-out;
+			}
+
+			.popup h2 {
+			margin-top: 0;
+			color: #333;
+			font-family: Tahoma, Arial, sans-serif;
+			}
+			.popup .close {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			transition: all 200ms;
+			font-size: 30px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #333;
+			}
+			.popup .close:hover {
+			color:  #001d6c;
+			}
+			.popup .content {
+			max-height: 30%;
+			overflow: auto;
+			}
+
+			.box {
+			width: 40%;
+			margin: 0 auto;			
+			background-clip: padding-box;
+			text-align: center;
+			}
+
+			.button {
+			background-color: #001d6c;
+			color: #fff;
+			border: none;
+			padding: 8px 16px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: background-color 0.3s ease;
+			}
+			.button:hover {
+			background-color: #fff;
+			color: #001d6c;
+			}
+
+/* Define color variables */
+:root {
+    --primary-color: #1565c0;
+    --secondary-color: #b3e5fc;
+    --text-color: #333;
+  }
+  
+  /* Reset the default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  p{
+	color: black;
+  }
+  /* Style the form container */
+  #form {
+    width: 80%;
+    max-width: 500px;
+    margin-top: 50px;
+    padding: 25px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+  }
+  
+  /* Style the input fields */
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: var(--text-color);
+  }
+  
+  /* Style the submit button */
+  #btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the checkboxes */
+  input[type="checkbox"] {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the left-aligned text */
+  .left {
+    text-align: left;
+  }
+  
+  /* Style the form heading */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+	</style>
+
+	<body>
+			
+ <script type = "text/javascript">   
+            const myInput = document.getElementById('id1');
+            myInput.addEventListener('input', function() {
+                const inputValue = myInput.value;
+                console.log(inputValue); 
+                });
+
+         
+         </script>
+
+	
+		<h1>Tech Tool Management Portal</h1>
+			<button type="submit" id = "action" onClick = "csvout()">Export to Excel</button> 
+			<script>
+				function csvout(){
+					csvContent = "data:text/csv;charset=utf-8,";
+					csvContent += "id, techname, description, link, displaytext, accepted, username, contact,"; 
+					csvContent += "R, TP, MT, AR, U, MDL, RA, RoTech, LS,RoThink, EoST, EF, RTE, DLoI, RaAoC,";
+					csvContent += "\r\n";
+					<% for(let i=0; i<results.length; i++){ %>
+						csvContent += "<%=results[i].id %>" + ",";
+						csvContent += "<%=results[i].techname%>" + ",";
+						csvContent += "<%=results[i].description%>" + ",";
+						csvContent += "<%=results[i].link%>" + ",";
+						csvContent += "<%=results[i].displaytext%>" + ",";
+						csvContent += "<%=results[i].accepted%>" + ",";
+						csvContent += "<%=results[i].username%>" + ",";
+						csvContent += "<%=results[i].contact%>" + ",";
+						csvContent += "\r\n";
+					<% } %>
+					
+					var now = new Date();
+					var log = "BGTechTools updated " + now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+" "+now.getHours()+""+now.getMinutes();
+					var encodedUri = encodeURI(csvContent);
+					var link = document.createElement("a");
+					link.setAttribute("href", encodedUri);
+					link.setAttribute("download", log + ".csv");
+					document.body.appendChild(link); 
+
+					link.click(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+					today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				}
+			</script>         
+		</form>
+		<h2>To Be Reviewed</h2>
+		<div id="techtools">
+			<div class = "row">
+				<div class = "cell, head">ID #</div>
+				<div class = "cell, head">Name</div>
+			
+				<div class = "cell, head">Description</div>
+				<div class = "cell, head">link</div>				
+				<div class = "cell, head">displaytext</div>
+				<div class = "cell, head">username</div>
+				<div class = "cell, head">Contact Information</div>
+				<div class = "cell, head">Images</div>
+				<div class = "cell, head">Accept</div>
+			</div>
+				
+
+			<% for(let i=0;i< results.length;i++){ %>
+			<% if(!results[i].accepted){%>
+			<div class = "row">
+				<div class = "cell" ><%= results[i].id %></div>
+				<div class = "cell"><%= results[i].techname %></div>
+				<div class = "cell"><%= results[i].description %></div>
+				<div class = "cell"><%= results[i].link %></div>
+				<div class = "cell"><%= results[i].displaytext %></div>
+				<div class = "cell"><%= results[i].username %></div>
+				<div class = "cell"><%= results[i].contact %></div>
+				<div class = "cell"><img src = "./testuploads/<%= results[i].id %>.png"  width="200px" height="200px"></div>
+				<div class = "cell">
+					<form action="/admin/add" method="post">
+						<button type="submit" id = "action"name="id" value="<%=results[i].id%>">Accept</button>          
+					</form>
+				</div>
+			</div>
+			<% } %>
+			<% } %>
+		</div>
+
+		<br>
+<h1>dd</h1>		
+<div id="popup1" class="overlay">
+			<div class="popup">
+				<h2>Edit the techtools </h2>
+				<a class="close" href="#">&times;</a>
+			<form action="/admin/edit" method="post" id="form" >    
+        <div align="center" id="">
+             
+                <p class="left">Enter the techtool id you are editing:<br>
+                    <input type="text" name="id1" placeholder="id%>" align="center" id = "id1"><br></p>
+                
+                <p class="left">Edited Tool Name:<br>
+                <input type="text" name="Techname" placeholder="techname%>" id = "Techname"><br></p>
+                <p class="left">Edited Description<br>  
+                <input type="text" name="description" placeholder="description%>" id = "description"><br></p>
+                
+                </p>       
+                <p class="left">Edited Link<br>  
+                <input type="text" name="Link" placeholder="link%>" id = "Link"><br></p>
+                
+                </p>       
+            <p class="left">Edited display text <br>  
+                <input type="text" name="display" placeholder="displaytext%>" id = "display"><br></p>
+                
+                </p>   
+                              
+                
+                <button type="submit" id = "btn" value="Upload">Submit</button>
+                
+            </form>
+        </div>
+		
+
+
+
+
+
+
+			</div>
+		</div>
+		
+
+      
+		<h2>Accepted</h2>
+		<div id="techtools">
+			<div class = "row">
+				<div class = "cell, head" contenteditable="true">ID #</div>
+				<div class = "cell, head">Name</div>
+			
+				<div class = "cell, head">Description</div>
+				<div class = "cell, head">link</div>				
+				<div class = "cell, head">displaytext</div>
+				<div class = "cell, head">username</div>
+				<div class = "cell, head">Contact Information</div>
+				<div class = "cell, head">Accepted</div>
+				<div class = "cell, head">Images</div>
+				<div class = "cell, head">Action</div>
+			</div>
+
+			<% for(let i=0;i< results.length;i++){ %>
+			
+			<% if(results[i].accepted){%>
+			
+			<div class = "row">
+			
+				<div class = "cell" ><%= results[i].id %></div>
+				<div class = "cell" ><%= results[i].techname %></div>
+				<div class = "cell" ><%= results[i].description %></div>
+				<div class = "cell" ><%= results[i].link %></div>
+				<div class = "cell" ><%= results[i].displaytext %></div>
+				<div class = "cell" ><%= results[i].username %></div>
+				<div class = "cell" ><%= results[i].contact %></div>
+				<div class = "cell" ><%= results[i].accepted %></div>
+				
+
+				<div class = "cell"><img src = "./testuploads/<%= results[i].id %>.png"  width="200px" height="200px"></div>
+				<div class = "cell">
+					<form action="/admin/remove" method="post">
+						<button type="submit" name="id" value="<%=results[i].id%>">Remove</button>
+					</form>
+					<br>
+						<div class="box">
+			<a class="button" href="#popup1">Edit </a>
+			
+		</div>
+				</div>
+				
+			</div>
+			
+			<% } %>
+			
+			<% } %>
+
+
+	</body>
+</html>

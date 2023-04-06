@@ -16,36 +16,36 @@
                 <a href = "/tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
-                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>       
-            </ul>           
+                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
+                <span id = "search">
+                    <form action="/tl4/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Submit">
+                    </form>
+                </span>
+            </ul>
         </div>
         <div id = "subhead">
             <h1 id="test">TL4: Crafting the Curriculum</h1>
-            
+            <h3>Filter by strand:</h3>
+            <form class = "filters" method = "post" action='/tl4'>
+                <div class = "label">
+                    <span class = "n1">Risk-Taking Environment <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS CREATE LEARNING ENVIRONMENTS THAT WELCOME RISK TAKING AND ARE APPROPRIATE, CHALLENGING AND FREQUENTLY FASCINATING TO STUDENTS.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n2">Deepening Lines of Inquiry <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS DESIGN ACTIVITIES THAT LEAD TO DEEPENING LINES OF INQUIRY AND THE SHARING OF IDEAS.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n3">Responsibility and Aspects of Citizenship <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS CRAFT ACTIVITIES THAT ENABLE STUDENTS TO DEVELOP RESPONSIBILITY AND ASPECTS OF CITIZENSHIP.</div>
+                </div>
+            </form>
         </div>
 
         <div id = "bar">&nbsp;</div>
-        
-        <div>
-            
-        </div>
-        <div id = "all">
-            <div>
-                <form class = "filters" method = "post" action='/tl3'>
-                    <span class = "n1">Strand 1 <input type = "checkbox" name = "s1" class = "checkf" value = "1"></span>
-                    <span class = "n2">Strand 2 <input type = "checkbox" name = "s2" class = "checkf" value = "1"></span>
-                    <span class = "n3">Strand 3 <input type = "checkbox" name = "s3" class = "checkf" value = "1"></span>
-                    <span class = "n4">Strand 4 <input type = "checkbox" name = "s4" class = "checkf" value = "1"></span>
-                    <button type="submit" name="filter" >Filter by strand</button>
-                </form>
-    
-                <form action="/tl3/:query" method="get">
-                    <input type="text" name="query" placeholder="Search">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            
-            <%# <h1>TL3: Evidence</h1> %>                
+        <div id = "all">              
             <br>    
             <div class = "techtip-wrap">
 
@@ -63,13 +63,13 @@
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
                     <div class = "tags">
                         <% if(content[1][i]["RTE"]){ %>
-                            <span class = "n1">Relationships</span>
+                            <span class = "n1">Risk-Taking Environment</span>
                         <% } %>
                         <% if(content[1][i]["DLoI"]){ %>
-                            <span class = "n2">Teacher Planning</span>
+                            <span class = "n2">Deepening Lines of Inquiry </span>
                         <% } %>
                         <% if(content[1][i]["RaAoC"]){ %>
-                            <span class = "n3">Modify their Teaching</span>
+                            <span class = "n3">Responsibility and Aspects of Citizenship</span>
                         <% } %>
                     </div>
                     <div class = "info">

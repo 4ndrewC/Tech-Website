@@ -10,43 +10,50 @@
         <div id = "topbar">
             <h1>BIBS·C Tech Tools</h1>
         </div> 
+        
         <div id = "navbar">
             <ul id = "nav">
                 <a href = "/"><li>Home</li><div class = "underline"></div></a>
                 <a href = "/tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
-                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>       
-            </ul>           
+                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>      
+                <span id = "search">
+                    <form action="/tl1/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Submit">
+                    </form>    
+                </span>       
+            </ul>
         </div>
+
         <div id = "subhead">
             <h1 id="test">TL1: Knowing Our Students</h1>
-            
+            <h3>Filter by strand:</h3>
+            <form class = "filters" method = "post" action='/tl1'>
+                <div class = "label">
+                    <span class = "n1">Relationships <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHER/STUDENT RELATIONSHIPS ARE PROACTIVE AND POSTIVE. </div>
+                </div>
+                <div class = "label">
+                    <span class = "n2">Teacher Planning <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHER PLANNING IS DRIVEN BY KNOWLEDGE OF EACH STUDENT'S NEXT STEPS FOR LEARNING.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n3">Modify their Teaching <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS MODIFY THEIR TEACHING BASED ON WHAT STUDENTS NEED TO SUCCEED.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n4">Achieve Readiness <input type = "checkbox" name = "s4" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS ACHIEVE READINESS FOR LEARNING BY CONSTRUCTING TASKS OR OFFERING LEARNING CHOICES AT DIFFERENT LEVELS OF COMPLEXITY.</div>
+                </div>
+            </form>
         </div>
 
         <div id = "bar">&nbsp;</div>
         
-        <div>
-            
-        </div>
         <div id = "all">
-            <div>
-                <form class = "filters" method = "post" action='/tl3'>
-                    <span class = "n1">Strand 1 <input type = "checkbox" name = "s1" class = "checkf" value = "1"></span>
-                    <span class = "n2">Strand 2 <input type = "checkbox" name = "s2" class = "checkf" value = "1"></span>
-                    <span class = "n3">Strand 3 <input type = "checkbox" name = "s3" class = "checkf" value = "1"></span>
-                    <span class = "n4">Strand 4 <input type = "checkbox" name = "s4" class = "checkf" value = "1"></span>
-                    <button type="submit" name="filter" >Filter by strand</button>
-                </form>
-    
-                <form action="/tl3/:query" method="get">
-                    <input type="text" name="query" placeholder="Search">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            
-            <%# <h1>TL3: Evidence</h1> %>                
-            <br>    
+            <br>
             <div class = "techtip-wrap">
 
                 <% if(content[0].length==0){ %>
@@ -80,7 +87,7 @@
                         <div class = "desc"><%= content[0][i]["description"] %></div>
                         <div class = "link">
                             <ul>
-                                <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
+                                <li><a href = "<%= content[0][i]["link"]%>"  target="_blank"> <%= content[0][i]["displaytext"] %></a></li>
                             </ul>
                         </div>
                     </div>

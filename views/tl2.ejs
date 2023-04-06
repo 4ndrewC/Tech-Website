@@ -16,32 +16,46 @@
                 <a href = "/tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
-                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>       
+                <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>   
+                <span id = "search">
+                    <form action="/tl2/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Submit">
+                    </form>
+                </span>
             </ul>           
         </div>
+
         <div id = "subhead">
             <h1 id="test">TL2: Strategies for Learning</h1>
+            <h3>Filter by strand:</h3>
+            <form class = "filters" method = "post" action='/tl2'>
+                <div class = "label">
+                    <span class = "n1">Understanding <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">IN ORDER TO MEET SPECIFIC LEARNING OBJECTIVES, THE TEACHER ENSURES THAT UNDERSTANDING IS EXPLORED, CONSTRUCTED AND CONFIRMED BY THE CLASS.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n2">Multi-Dimensional Learning <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS CONSTRUCT MULTI-DIMENSIONAL LEARNING EXPERIENCES THAT ARE RELEVANT TO THE STUDENT, EMBEDDED IN REAL-WORLD CONTEXTS AND OFTEN STUDENT-INITIATED.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n3">Reasoned Arguments <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS ENABLE STUDENTS TO USE REASONED ARGUMENTS AND ACTIVE LISTENING AS AN INTEGRAL PART OF KNOWLEDGE BUILDING AND DIVERSE PERSPECTIVES ARE WELCOMED AND CONSIDERED.</div>
+                </div>
+                <div class = "label">
+                    <span class = "n4">Repertoire of Techniques <input type = "checkbox" name = "s4" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS EMPLOY A REPERTOIRE OF TECHNIQUES, INCLUDING WHOLE CLASS INSTRUCTION, WHOLE CLASS COLLECTIVE DISCUSSION, PAIRED TALK AND SMALL GROUP DIALOGUE TO SUPPORT LEARNING. </div>
+                </div>
+                <div class = "label">
+                    <span class = "n5">Learning Spaces <input type = "checkbox" name = "s5" class = "checkf" value = "1" onchange='this.form.submit()'></span>
+                    <div class = "overlay">TEACHERS PURPOSEFULLY DESIGN LEARNING SPACES TO PROMOTE THE INTENDED LEARNING IMPACT.</div>
+                </div>
+            </form>
         </div>
 
         <div id = "bar">&nbsp;</div>
         
         <div id = "all">
-            <div>
-                <form class = "filters" method = "post" action='/tl2'>
-                    <span class = "n1">Strand 1 <input type = "checkbox" name = "s1" class = "checkf" value = "1"></span>
-                    <span class = "n2">Strand 2 <input type = "checkbox" name = "s2" class = "checkf" value = "1"></span>
-                    <span class = "n3">Strand 3 <input type = "checkbox" name = "s3" class = "checkf" value = "1"></span>
-                    <span class = "n4">Strand 4 <input type = "checkbox" name = "s4" class = "checkf" value = "1"></span>
-                    <button type="submit" name="filter" >Filter by strand</button>
-                </form>
-    
-                <form action="/tl2/:query" method="get">
-                    <input type="text" name="query" placeholder="Search">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            
-            <%# <h1>TL3: Evidence</h1> %>                
             <br>    
             <div class = "techtip-wrap">
                 <% if(content[0].length==0){ %>
@@ -57,19 +71,19 @@
                         <h3 class="name"><%= content[0][i]["techname"] %></h3>
                         <div class = "tags">
                             <% if(content[1][i]["U"]){ %>
-                                <span class = "n1">Relationships</span>
+                                <span class = "n1">Understanding</span>
                             <% } %>
                             <% if(content[1][i]["MDL"]){ %>
-                                <span class = "n2">Teacher Planning</span>
+                                <span class = "n2">Multi-Dimensional Learning</span>
                             <% } %>
                             <% if(content[1][i]["RA"]){ %>
-                                <span class = "n3">Modify their Teaching</span>
+                                <span class = "n3">Reasoned Arguments</span>
                             <% } %>
                             <% if(content[1][i]["RoTech"]){ %>
-                                <span class = "n4">Achieve Readiness</span>
+                                <span class = "n4">Repertoire of Techniques</span>
                             <% } %>
                             <% if(content[1][i]["LS"]){ %>
-                                <span class = "n5">Achieve Readiness</span>
+                                <span class = "n5">Learning Spaces</span>
                             <% } %>
                         </div>
                         <div class = "info">
@@ -110,31 +124,6 @@
                 console.log("<%=checked[i]%>")
                 filters[<%=i%>].checked = <%=checked[i];%>
             <%}%>
-
-           
-
-            // function Search(input){
-               
-            //     const items = document.querySelectorAll('.name');
-            //     //user's search query
-            //     const target = input.value.toLowerCase();
-                
-            //     // Filter through the list of items and display only the ones that match the search query
-            //     //for (let i : items){
-
-            //     //}
-            //     items.forEach(item => {
-            //         console.log(item.innerHTML);
-            //         const itemText = item.textContent.toLowerCase();
-            //         if (itemText.includes(target)) {
-            //             item.style.display = "block";
-            //         } 
-            //         else {
-            //             item.style.display = "none";
-            //         }
-            //     });
-            // }
-
         </script>
     </body>
 </html>

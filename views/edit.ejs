@@ -1,0 +1,44 @@
+<html>
+    <title>Registeration Form</title>
+    <head>
+        <link rel="stylesheet" href="./public/form.css">
+        <link rel="icon" href="https://www.mrdavison.org/projects/source/logo.jpg">
+    </head>
+    <body><form action="/edit" method="post" id="form" >    
+        <div align="center" id="">
+             
+                <p class="left">Enter the techtool id you are editing:<br>
+                    <input type="text" name="id1" placeholder="id" align="center" id = "id1"><br></p>
+                
+                <p class="left">Edited Tool Name:<br>
+                <input type="text" name="Techname" placeholder="Techname" id = "Techname"><br></p>
+                <p class="left">Edited Description<br>  
+                <input type="text" name="description" placeholder="description" id = "description"><br></p>
+                
+                </p>       
+                <p class="left">Edited Link<br>  
+                <input type="text" name="Link" placeholder="Link" id = "Link"><br></p>
+                
+                </p>       
+            <p class="left">Edited display text <br>  
+                <input type="text" name="display" placeholder="Link" id = "display"><br></p>
+                
+                </p>   
+                              
+                
+                <button type="submit" id = "btn" value="Upload">Submit</button>
+                
+            </form>
+        </div>
+
+         <script type = "text/javascript">   
+            const myInput = document.getElementById('id1');
+            myInput.addEventListener('input', function() {
+                const inputValue = myInput.value;
+                console.log(inputValue); 
+                });
+
+         
+         </script>
+    </body>
+</html>
