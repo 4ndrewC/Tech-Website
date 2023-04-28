@@ -2,11 +2,9 @@
 <html>
 	<head>        
 		<title>Admin Management</title>
-		<link rel = "stylesheet" href = "./public/main.css">
 		<link rel = "icon" href = "icon.png">
 		<meta name = "viewport" content = "width=device-width, initial-scale=1">
-		<meta charset = "utf-8">
-		  <script src="/jquery/jquery.min.js"></script>
+		<meta charset = "utf-8"> 
 	</head>
 	<style>
 		body{
@@ -20,7 +18,7 @@
 		}
 		#techtools{
 			margin: 20px;
-			display: block;
+			display: table;
 			box-sizing: border-box;
 			overflow-x: scroll;
 			border-collapse: collapse;
@@ -51,8 +49,6 @@
 			font-weight: bold;
 			text-transform: uppercase;
 			font-size: 14px;
-			min-width: 11.12%;
-
 		}
 
 		h1, h2{
@@ -92,63 +88,43 @@
 		form{
 			display: inline-block;
 		}
-		.overlay {
+		
+		#popup {
+			display: none;
 			position: fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: rgba(0, 0, 0, 0.7);
-			transition: opacity 500ms;
-			visibility: hidden;
-			opacity: 0;
-			}
-			.overlay:target {
-			visibility: visible;
-			opacity: 1;
-			}
-
-			.popup {
-			margin: 70px auto;
+			top: 40%;
+			left: 10%;
+			max-width:80%;
 			padding: 10px;
-			background: #fff;
-			border-radius: 5px;
-			width: 30%;
-			position: relative;
-			transition: all 5s ease-in-out;
-			}
+			margin: auto;
+			background: #FFF;
+			border: 2px solid #fff;
+			z-index: 20;
+		}
 
-			.popup h2 {
-			margin-top: 0;
-			color: #333;
-			font-family: Tahoma, Arial, sans-serif;
-			}
-			.popup .close {
+		#popup:after {
+			position: fixed;
+			display: block;
+			content: "";
+			transform: translate(-50%, -50%);
+			height:1000%;
+			width:1000%;
+			background: rgba(0,0,0,0.5);
+			z-index: -2;  
+			background-size: cover;
+		}
+
+		#popup:before {
 			position: absolute;
-			top: 20px;
-			right: 30px;
-			transition: all 200ms;
-			font-size: 30px;
-			font-weight: bold;
-			text-decoration: none;
-			color: #333;
-			}
-			.popup .close:hover {
-			color:  #001d6c;
-			}
-			.popup .content {
-			max-height: 30%;
-			overflow: auto;
-			}
-
-			.box {
-			width: 40%;
-			margin: 0 auto;			
-			background-clip: padding-box;
-			text-align: center;
-			}
-
-			.button {
+			content: "";
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: #FFF;
+			z-index: -1;
+		}
+		.button {
 			background-color: #001d6c;
 			color: #fff;
 			border: none;
@@ -159,258 +135,223 @@
 			font-weight: bold;
 			text-transform: uppercase;
 			transition: background-color 0.3s ease;
-			}
-			.button:hover {
+		}
+		.button:hover {
 			background-color: #fff;
 			color: #001d6c;
-			}
+		}
 
-/* Define color variables */
-:root {
-    --primary-color: #1565c0;
-    --secondary-color: #b3e5fc;
-    --text-color: #333;
-  }
-  
-  /* Reset the default styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  p{
-	color: black;
-  }
-  /* Style the form container */
-  #form {
-    width: 80%;
-    max-width: 500px;
-    margin-top: 50px;
-    padding: 25px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    background-color: var(--secondary-color);
-  }
-  
-  /* Style the input fields */
-  input[type="text"],
-  textarea,
-  input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid var(--primary-color);
-    background-color: white;
-    color: var(--text-color);
-  }
-  
-  /* Style the submit button */
-  #btn {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Style the checkboxes */
-  input[type="checkbox"] {
-    margin-bottom: 10px;
-  }
-  
-  /* Style the left-aligned text */
-  .left {
-    text-align: left;
-  }
-  
-  /* Style the form heading */
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-  }
-  
+		/* Define color variables */
+		:root {
+			--primary-color: #1565c0;
+			--secondary-color: #b3e5fc;
+			--text-color: #333;
+		}
+		
+		/* Reset the default styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		p{
+			color: black;
+		}
+		/* Style the form container */
+		#form  {
+			width: 1000px;
+			
+			margin-top: 50px;
+			padding: 25px;
+			border: 1px solid var(--secondary-color);
+			border-radius: 5px;
+			background-color: var(--secondary-color);
+		}
+		
+		/* Style the input fields */
+		input[type="text"],
+		textarea,
+		input[type="file"] {
+			width: 100%;
+			height: 50px;
+			padding: 10px;
+			margin-bottom: 20px;
+			/* border-radius: 5px; */
+			border: 1px solid var(--primary-color);
+			background-color: white;
+			color: var(--text-color);
+		}
+		
+		/* Style the submit button */
+		#btn {
+			background-color: var(--primary-color);
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		/* Style the checkboxes */
+		input[type="checkbox"] {
+			margin-bottom: 10px;
+		}
+		
+		/* Style the left-aligned text */
+		.left {
+			text-align: left;
+		}
+		
+		/* Style the form heading */
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+			color: var(--primary-color);
+		}
+		#all{
+			display: flex;
+		}
+		.side{
+			width: 50%;
+			display: inline-block;
+		}
+		.id1{
+			pointer-events: none;
+		}
+		
 	</style>
 
-	<body>
-			
- <script type = "text/javascript">   
-            const myInput = document.getElementById('id1');
-            myInput.addEventListener('input', function() {
-                const inputValue = myInput.value;
-                console.log(inputValue); 
-                });
-
-         
-         </script>
-
-	
+	<body>	
 		<h1>Tech Tool Management Portal</h1>
-			<button type="submit" id = "action" onClick = "csvout()">Export to Excel</button> 
-			<script>
-				function csvout(){
-					csvContent = "data:text/csv;charset=utf-8,";
-					csvContent += "id, techname, description, link, displaytext, accepted, username, contact,"; 
-					csvContent += "R, TP, MT, AR, U, MDL, RA, RoTech, LS,RoThink, EoST, EF, RTE, DLoI, RaAoC,";
+		<button type="submit" id = "action" onClick = "csvout()">Export to Excel</button> 
+		<script>
+			function reply_click(clicked_id, name,  des,  link, display)
+			{	
+				document.forms['editTech'].elements['id1'].value =clicked_id;
+				document.forms['editTech'].elements['Techname'].value =name;
+				document.forms['editTech'].elements['description'].value =des;
+				document.forms['editTech'].elements['Link'].value = link;
+				document.forms['editTech'].elements['display'].value =display;
+			}
+			$ = function(id) {
+			return document.getElementById(id);
+			}
+
+			var show = function(id) {
+				$(id).style.display ='block';
+			}
+			var hide = function(id) {
+				$(id).style.display ='none';
+			}
+			function csvout(){
+				csvContent = "data:text/csv;charset=utf-8,";
+				csvContent += "id, techname, description, link, displaytext, accepted, username, contact,"; 
+				csvContent += "R, TP, MT, AR, U, MDL, RA, RoTech, LS,RoThink, EoST, EF, RTE, DLoI, RaAoC,";
+				csvContent += "\r\n";
+				<% for(let i=0; i<results[0].length; i++){ %>
+					csvContent += "<%=results[i].id %>" + ",";
+					csvContent += "<%=results[i].techname%>" + ",";
+					csvContent += "<%=results[i].description%>" + ",";
+					csvContent += "<%=results[i].link%>" + ",";
+					csvContent += "<%=results[i].displaytext%>" + ",";
+					csvContent += "<%=results[i].accepted%>" + ",";
+					csvContent += "<%=results[i].username%>" + ",";
+					csvContent += "<%=results[i].contact%>" + ",";
 					csvContent += "\r\n";
-					<% for(let i=0; i<results.length; i++){ %>
-						csvContent += "<%=results[i].id %>" + ",";
-						csvContent += "<%=results[i].techname%>" + ",";
-						csvContent += "<%=results[i].description%>" + ",";
-						csvContent += "<%=results[i].link%>" + ",";
-						csvContent += "<%=results[i].displaytext%>" + ",";
-						csvContent += "<%=results[i].accepted%>" + ",";
-						csvContent += "<%=results[i].username%>" + ",";
-						csvContent += "<%=results[i].contact%>" + ",";
-						csvContent += "\r\n";
+				<% } %>
+				
+				var now = new Date();
+				var log = "BGTechTools updated " + now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+" "+now.getHours()+""+now.getMinutes();
+				var encodedUri = encodeURI(csvContent);
+				var link = document.createElement("a");
+				link.setAttribute("href", encodedUri);
+				link.setAttribute("download", log + ".csv");
+				document.body.appendChild(link); 
+				link.click(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+				today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+			}
+		</script>     
+		<div id = "all">
+			<div class = "side">
+				<h2>To Be Reviewed</h2>
+				<div id="techtools">
+					<div class = "row">
+						<div class = "cell head">ID #</div>
+						<div class = "cell head">Name</div>
+						<div class = "cell head">username</div>
+						<div class = "cell head">Accept</div>
+					</div>
+
+					<% for(let i=0;i< results.length;i++){ %>
+					<% if(!results[i].accepted){%>
+					<div class = "row">
+						<div class = "cell" ><%= results[i].id %></div>
+						<div class = "cell"><%= results[i].techname %></div>
+						<div class = "cell"><%= results[i].username %></div>
+						<div class = "cell">
+							<form action="/admin/add" method="post">
+								<button type="submit" id = "action"name="id" value="<%=results[i].id%>">Accept</button>          
+							</form>
+						</div>
+					</div>
 					<% } %>
-					
-					var now = new Date();
-					var log = "BGTechTools updated " + now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+" "+now.getHours()+""+now.getMinutes();
-					var encodedUri = encodeURI(csvContent);
-					var link = document.createElement("a");
-					link.setAttribute("href", encodedUri);
-					link.setAttribute("download", log + ".csv");
-					document.body.appendChild(link); 
-
-					link.click(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-					today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-				}
-			</script>         
-		</form>
-		<h2>To Be Reviewed</h2>
-		<div id="techtools">
-			<div class = "row">
-				<div class = "cell, head">ID #</div>
-				<div class = "cell, head">Name</div>
-			
-				<div class = "cell, head">Description</div>
-				<div class = "cell, head">link</div>				
-				<div class = "cell, head">displaytext</div>
-				<div class = "cell, head">username</div>
-				<div class = "cell, head">Contact Information</div>
-				<div class = "cell, head">Images</div>
-				<div class = "cell, head">Accept</div>
-			</div>
-				
-
-			<% for(let i=0;i< results.length;i++){ %>
-			<% if(!results[i].accepted){%>
-			<div class = "row">
-				<div class = "cell" ><%= results[i].id %></div>
-				<div class = "cell"><%= results[i].techname %></div>
-				<div class = "cell"><%= results[i].description %></div>
-				<div class = "cell"><%= results[i].link %></div>
-				<div class = "cell"><%= results[i].displaytext %></div>
-				<div class = "cell"><%= results[i].username %></div>
-				<div class = "cell"><%= results[i].contact %></div>
-				<div class = "cell"><img src = "./testuploads/<%= results[i].id %>.png"  width="200px" height="200px"></div>
-				<div class = "cell">
-					<form action="/admin/add" method="post">
-						<button type="submit" id = "action"name="id" value="<%=results[i].id%>">Accept</button>          
-					</form>
+					<% } %>
 				</div>
 			</div>
-			<% } %>
-			<% } %>
-		</div>
 
-		<br>
-<h1>dd</h1>		
-<div id="popup1" class="overlay">
-			<div class="popup">
-				<h2>Edit the techtools </h2>
-				<a class="close" href="#">&times;</a>
-			<form action="/admin/edit" method="post" id="form" >    
-        <div align="center" id="">
-             
-                <p class="left">Enter the techtool id you are editing:<br>
-                    <input type="text" name="id1" placeholder="id%>" align="center" id = "id1"><br></p>
-                
-                <p class="left">Edited Tool Name:<br>
-                <input type="text" name="Techname" placeholder="techname%>" id = "Techname"><br></p>
-                <p class="left">Edited Description<br>  
-                <input type="text" name="description" placeholder="description%>" id = "description"><br></p>
-                
-                </p>       
-                <p class="left">Edited Link<br>  
-                <input type="text" name="Link" placeholder="link%>" id = "Link"><br></p>
-                
-                </p>       
-            <p class="left">Edited display text <br>  
-                <input type="text" name="display" placeholder="displaytext%>" id = "display"><br></p>
-                
-                </p>   
-                              
-                
-                <button type="submit" id = "btn" value="Upload">Submit</button>
-                
-            </form>
-        </div>
-		
+			<div class = "side">
+				<h2>Accepted</h2>
+				<div id="techtools">
+					<div class = "row">
+						<div class = "cell head" contenteditable="true">ID #</div>
+						<div class = "cell head">Name</div>
+						<div class = "cell head">username</div>
+						<div class = "cell head">Action</div>
+					</div>
 
-
-
-
-
-
-			</div>
-		</div>
-		
-
-      
-		<h2>Accepted</h2>
-		<div id="techtools">
-			<div class = "row">
-				<div class = "cell, head" contenteditable="true">ID #</div>
-				<div class = "cell, head">Name</div>
-			
-				<div class = "cell, head">Description</div>
-				<div class = "cell, head">link</div>				
-				<div class = "cell, head">displaytext</div>
-				<div class = "cell, head">username</div>
-				<div class = "cell, head">Contact Information</div>
-				<div class = "cell, head">Accepted</div>
-				<div class = "cell, head">Images</div>
-				<div class = "cell, head">Action</div>
-			</div>
-
-			<% for(let i=0;i< results.length;i++){ %>
-			
-			<% if(results[i].accepted){%>
-			
-			<div class = "row">
-			
-				<div class = "cell" ><%= results[i].id %></div>
-				<div class = "cell" ><%= results[i].techname %></div>
-				<div class = "cell" ><%= results[i].description %></div>
-				<div class = "cell" ><%= results[i].link %></div>
-				<div class = "cell" ><%= results[i].displaytext %></div>
-				<div class = "cell" ><%= results[i].username %></div>
-				<div class = "cell" ><%= results[i].contact %></div>
-				<div class = "cell" ><%= results[i].accepted %></div>
-				
-
-				<div class = "cell"><img src = "./testuploads/<%= results[i].id %>.png"  width="200px" height="200px"></div>
-				<div class = "cell">
-					<form action="/admin/remove" method="post">
-						<button type="submit" name="id" value="<%=results[i].id%>">Remove</button>
-					</form>
-					<br>
-						<div class="box">
-			<a class="button" href="#popup1">Edit </a>
-			
-		</div>
+					<% for(let i=0;i< results.length;i++){ %>
+					<% if(results[i].accepted){%>
+					<div class = "row">
+						<div class = "cell" ><%= results[i].id %></div>
+						<div class = "cell" ><%= results[i].techname %></div>
+						<div class = "cell" ><%= results[i].username %></div>
+						<div class = "cell">
+							<form action="/admin/remove" method="post">
+								<button type="submit" name="id" value="<%=results[i].id%>">Remove</button>
+							</form>
+							<br>
+							
+							<button type="submit" name="id" id="<%=results[i].id%>"  onclick='show("popup");reply_click(this.id, "<%=results[i].techname%>","<%=results[i].description%>","<%=results[i].link%>","<%=results[i].displaytext%>");'  >Edit</button>
+						</div>
+					</div>
+					<% } %>
+					<% } %>
 				</div>
-				
 			</div>
-			
-			<% } %>
-			
-			<% } %>
+		</div>
 
+		<div class="popup" id="popup"> 
+			<a href="#" onclick="hide('popup')">&times;</a>
+]				<form name = "editTech" action="/admin/edit" method="post"> 
+					<div id = "techtools">
+						<div class = "row">
+							<div class = "cell head">Tool ID</div>
+							<div class = "cell head">Tool Name:</div>
+							<div class = "cell head">Description</div>
+							<div class = "cell head">Link</div>
+							<div class = "cell head">Display Text</div>
+						</div>
+						<div class = "row">
+							<div class = "cell"><textarea type="text" name="id1" placeholder="id1" id = "id1"><br></textarea></div>
+							<div class = "cell"><textarea type="text" name="Techname" placeholder="Techname" id = "Techname"><br></textarea></div>
+							<div class = "cell"><textarea type="text" name="description" placeholder="description" id = "description"><br></textarea></div>
+							<div class = "cell"><textarea type="text" name="Link" placeholder="Link" id = "Link"><br></textarea>	</div>
+							<div class = "cell"><textarea type="text" name="display" placeholder="Link" id = "display"><br></textarea></div>
+						</div>
+					</div>			
+					<button type="submit" id = "btn">Submit</button>
+				</form>
 
+		</div>
 	</body>
 </html>

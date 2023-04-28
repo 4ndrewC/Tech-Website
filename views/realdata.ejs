@@ -1,0 +1,44 @@
+<div class="box"><a class="button" href="#popup1">Edit</a></div>
+
+
+<div id="popup1" class="overlay">
+					<div class="popup">
+						<h2>Edit the techtools </h2>
+						<a class="close" href="#">&times;</a>
+					<form action="/admin/edit" method="post" id="form" >    
+				<div align="center" id="">
+					
+						<p class="left">Enter the techtool id you are editing:<br>
+							<input type="text" name="id1" placeholder="id%>" align="center" id = "id1"><br></p>
+						
+						<p class="left">Edited Tool Name:<br>
+						<input type="text" name="Techname" placeholder="techname%>" id = "Techname"><br></p>
+						<p class="left">Edited Description<br>  
+						<input type="text" name="description" placeholder="description%>" id = "description"><br></p>
+						
+						</p>       
+						<p class="left">Edited Link<br>  
+						<input type="text" name="Link" placeholder="link%>" id = "Link"><br></p>
+						
+						</p>       
+					<p class="left">Edited display text <br>  
+						<input type="text" name="display" placeholder="displaytext%>" id = "display"><br></p>
+						
+						</p>   
+									
+						
+						<button type="submit" id = "btn" value="Upload">Submit</button>
+						
+					</form>
+				</div>
+					</div>
+
+
+
+                    //  document.forms['editTech'].elements['Techname'].value = <%=results[clicked_id].techname%>
+	// document.forms['editTech'].elements['description'].value =<%=results[clicked_id].description%>
+	// document.forms['editTech'].elements['Link'].value = <%=results[clicked_id].link%>
+	// document.forms['editTech'].elements['display'].value =<%=results[clicked_id].displaytext%>
+
+
+    , <%=results[i].description%>, <%=results[i].link%>, <%=results[i].displaytext%> 

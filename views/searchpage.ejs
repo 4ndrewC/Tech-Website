@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Search: <%=query%></title>
+        <link rel = "stylesheet" href = "../public/main.css">
+        <link rel = "icon" href = "icon.png">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <div id = "topbar">
+            <h1>BIBS·C Tech Tools</h1>
+        </div> 
+        
+        <div id = "navbar">
+            <ul id = "nav">
+                <a href = "../"><li>Home</li><div class = "underline"></div></a>
+                <a href = "../tl1"><li>Knowing (TL1)</li><div class = "underline"></div></a>
+                <a href = "../tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
+                <a href = "../tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
+                <a href = "../tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>       
+                <span id = "search">
+                    <form action="/searchpage/:query" method="get">
+                        <input type="text" name="query" placeholder="Search" value="<%=query%>">
+                        <input type="submit" value="Search">
+                    </form>    
+                </span>  
+            </ul>
+        </div>
+
+        <div id = "subhead">
+            <h1 id="test">Search Results for "<%=query%>":</h1>
+            <h1></h1>
+        </div>
+
+        <div id = "bar">&nbsp;</div>
+        <div id = "all">
+            <br>
+            <div class = "techtip-wrap">
+
+                <% if(tools.length==0){ %>
+                    <div>
+                        <h4>There is nothing here</h4>
+                    </div>
+                <% } else { %>
+
+                <% for(let i=0; i<tools.length; i++){ %>
+
+                <div class = "techtip">
+                    <h3 class="name"><%= tools[i]['item']["techname"]%>
+                        <% if(tags[i]["R"]||tags[i]["TP"]||tags[i]["MT"]||tags[i]["AR"]){ %>
+                        <a href = "../tl1#<%=tools[i]['item']["id"]%>" class = "tltags"><span>TL1</span></a>
+                        <% } %>
+                        <% if(tags[i]["U"]||tags[i]["MDL"]||tags[i]["RA"]||tags[i]["RoTech"]||tags[i]["LS"]){ %>
+                        <a href = "../tl2#<%=tools[i]['item']["id"]%>" class = "tltags"><span>TL2</span></a>
+                        <% } %>
+                        <% if(tags[i]["RoThink"]||tags[i]["EoST"]||tags[i]["EF"]){ %>
+                        <a href = "../tl3#<%=tools[i]['item']["id"]%>" class = "tltags"><span>TL3</span></a>                       
+                        <% } %>
+                        <% if(tags[i]["RFE"]||tags[i]["DLoI"]||tags[i]["RoAoC"]){ %>
+                        <a href = "../tl4#<%=tools[i]['item']["id"]%>" class = "tltags"><span">TL4</span></a>
+                        <% } %>
+                    </h3>
+                    <div class = "info">
+                        <div class = "desc"><%= tools[i]['item']["tl1_desc"] %></div>
+                        <div class = "link">
+                            <ul>
+                                <li><a href = "<%= tools[i]['item']["link"] %>"  target="_blank"> <%= tools[i]['item']["displaytext"] %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class = "line"></div>
+                </div>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+        <footer>
+			<p>
+				<a href = "/tl1">Knowing (TL1)</a> | 
+				<a href = "/tl2">Strategies (TL2)</a> |
+				<a href = "/tl3">Evidence (TL3)</a> |
+				<a href = "/tl4">Crafting (TL4)</a>
+			</p>
+			<p><b>&copy; 2023 BIBS·C Tech Tips</b></p> 
+		</footer>
+        <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="topbutton" title="Go to top">Top</button>
+
+        <script type = "text/javascript">   
+            function $(x){
+                return document.getElementById(x);
+            }
+            // Get the button:
+            window.addEventListener("scroll", scroll);
+            function scroll() {
+                if(document.body.scrollTop > $("bar").offsetTop || document.documentElement.scrollTop > $("bar").offsetTop){
+                    $("topbutton").style.display = "block";
+                } 
+                else{
+                    $("topbutton").style.display = "none";
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -17,12 +17,12 @@
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
                 <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
-                <span id = "search">
+                <!-- <span id = "search">
                     <form action="/tl3/:query" method="get">
-                        <input type="text" name="query" placeholder="Search">
+                        <input type="text" name="query" placeholder="Search" value="<%=queryResult%>">
                         <input type="submit" value="Submit">
                     </form>
-                </span>
+                </span> -->
             </ul>           
         </div>
         <div id = "subhead">
@@ -61,6 +61,7 @@
                 <% if((content[1][i]["RoThink"]&&checked[0])||(content[1][i]["EoST"]&&checked[1])||(content[1][i]["EF"]&&checked[2])&&checked[3]){ %>
 
                 <div class = "techtip">
+                    <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
                     <div class = "tags">
                         <% if(content[1][i]["RoThink"]){ %>
@@ -74,21 +75,31 @@
                         <% } %>
                     </div>
                     <div class = "info">
-                        <div class = "img"><img src = "/testuploads/<%=i+1%>.png"></div>
-                        <div class = "desc"><%= content[0][i]["description"] %></div>
+                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["techname"]%>.png"></div>
+                        <div class = "desc"><%= content[0][i]["tl3_desc"] %></div>
                         <div class = "link">
                             <ul>
                                 <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class = "line"></div>
                 </div>
                 <% } %> 
                 <% } %> 
                 <% } %>
             </div>
+            <br>
         </div>
+        <footer>
+			<p>
+				<a href = "/tl1">Knowing (TL1)</a> | 
+				<a href = "/tl2">Strategies (TL2)</a> |
+				<a href = "/tl3">Evidence (TL3)</a> |
+				<a href = "/tl4">Crafting (TL4)</a>
+			</p>
+			<p><b>&copy; 2023 BIBS·C Tech Tips</b></p> 
+		</footer>
+
         <button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="topbutton" title="Go to top">Top</button>
 
         <script type = "text/javascript">   
@@ -111,31 +122,6 @@
                 console.log("<%=checked[i]%>")
                 filters[<%=i%>].checked = <%=checked[i];%>
             <%}%>
-
-           
-
-            // function Search(input){
-               
-            //     const items = document.querySelectorAll('.name');
-            //     //user's search query
-            //     const target = input.value.toLowerCase();
-                
-            //     // Filter through the list of items and display only the ones that match the search query
-            //     //for (let i : items){
-
-            //     //}
-            //     items.forEach(item => {
-            //         console.log(item.innerHTML);
-            //         const itemText = item.textContent.toLowerCase();
-            //         if (itemText.includes(target)) {
-            //             item.style.display = "block";
-            //         } 
-            //         else {
-            //             item.style.display = "none";
-            //         }
-            //     });
-            // }
-
         </script>
     </body>
 </html>

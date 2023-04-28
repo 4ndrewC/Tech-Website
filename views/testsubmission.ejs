@@ -1,0 +1,54 @@
+<html>
+    <title>Registeration Form</title>
+    <head>
+        <link rel="stylesheet" href="./public/form.css">
+        <link rel="icon" href="https://www.mrdavison.org/projects/source/logo.jpg">
+    </head>
+    <body>
+        <div align="center" id="">
+            <form action="/submission/submitted" method="post" id="form" enctype="multipart/form-data">
+                <p class="left">Full Name:<br>
+                <input type="text" name="UserName" placeholder="Name" align="center"><br></p>
+                <p class="left">Tool Name:<br>
+                <input type="text" name="Techname" placeholder="Techname" id = "username" ><br></p>
+                <p class="left">Please give a description of your tool and how it supports the substrands (2-3 sentences):<br>  
+                <textarea type="text" name="Description" placeholder="Description"></textarea><br>
+                </p>
+                
+
+                <p>Select the categories that your tool goes under:<br></p>
+                <div class="checkbox-container">
+                <input type="checkbox" name="R">Relationship<br>
+                <input type="checkbox" name="TP" value = true>Teacher Planning<br>
+                <input type="checkbox" name="MT" value = true>Modify Their Teaching<br>
+                <input type="checkbox" name="AR" value = true>Achieve Readiness<br>
+                <input type="checkbox" name="U" value = true>Understanding<br>
+                <input type="checkbox" name="MDL" value = true>Mulit-Dimensional Learning<br>
+                <input type="checkbox" name="RA" value = true>Reasoned Arguments<br>
+                <input type="checkbox" name="RoTech" value = true>Repertoire of Techniques<br>
+                <input type="checkbox" name="LS" value = true>Learning Spaces<br>
+                <input type="checkbox" name="RoThink" value = true>Reflect on Thinking<br>
+                <input type="checkbox" name="EoST" value = true>Evidence of Student Learning<br>
+                <input type="checkbox" name="EF" value = true>Employ Feedback<br>
+                <input type="checkbox" name="RTE" value = true>Risk Taking Environment<br>
+                <input type="checkbox" name="DLoI" value = true>Deepening Lines of Inquiry<br>
+                <input type="checkbox" name="RaAoC" value = true>Responsibility and Aspects of Citizenship<br>
+                </div>
+                
+                <p class="left">Please provide a link providing additional information for the tool<br> 
+                <input type="text" name="link" palceholder="Official Link"><br></p>  
+                
+                <p class="left">Please provide the text to be displayed for the link above<br>
+                <input type="text" name="displaytext" placeholder="Display Text"><br></p>
+                
+                <p class="left">Please provide an image for your tech tool<br>
+                <input type="file" name="file"><br></p>
+                    
+                    
+                
+                <button type="submit" id = "btn" value="Upload">Submit</button>
+                
+            </form>
+        </div>
+    </body>
+</html>
