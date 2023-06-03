@@ -7,11 +7,10 @@ router.get("/", async (req, res) => {
     res.render('submissionpage');
 })
 
-router.post("/submitted", async (req, res) => {
+router.post("/", async (req, res) => {
     const content = req.body;
     const results = await db.promise().query(`select * from submission`);
     const submissions = results[0];
-    db.promise().query(`insert into submission values(currentID+1, '${content.techname}', '${content.description}', '${content.categories}', accepted, '${content.username}', '${content.contact}')`);
     
     // console.log(content.UserName);
     // console.log(content.Techname);
@@ -41,26 +40,30 @@ router.post("/submitted", async (req, res) => {
     var last = 0;
     if(current[0]!=0)last = current[0][current[0].length-1]["id"];
     last+=1;
+    // db.promise().query(`insert into submission values(${last}, '${content.techname}', '${content.description}', '${content.categories}', accepted, '${content.username}', '${content.contact}')`);
 
-    console.log(req.files)
-    var file = req.files.file
-    var str =  req.body.Techname 
-    //file['name'] = req.body.Techname  + ".png";
-    file['name'] =str.replace(/\s+/g, '_')  + ".png";
-    console.log(file.name)
-    if(file!=null){
-        file.mv('./testuploads/'+file.name, function(err){
+    
+    // file['name'] = req.body.Techname  + ".png";
+    // file['name'] =str.replace(/\s+/g, '_')  + ".png";
+    console.log(last)
+    // file['name'] =last  + ".png";
+    // console.log(file.name)
+    if(req.files){
+        console.log(req.files.file['name'])
+        var file = req.files.file
+        var str =  req.body.Techname 
+        file.mv('./images/'+file.name, function(err){
             if(err){
                 res.send(err)
             }
             else{
-                alert("File Uploaded")
+                console.log("file uploaded")
             }
         })
     }
     
-
-    await db.promise().query(`insert into submission values(${last}, "${content.Techname}", "${content.Description}", "${content.link}", "${content.displaytext}", 0, "${content.UserName}", "${content.contact}")`);
+    
+    await db.promise().query(`insert into submission values(${last}, "${content.Techname}", "${content.tl1_desc}", "${content.tl2_desc}", "${content.tl3_desc}", "${content.tl4_desc}", "${content.link}", "${content.displaytext}", 0, "${content.UserName}", "${content.contact}")`);
     // await db.promise().query(`insert into submission values(123, "asdofm", "asdf", "adsf", "asd", "some", 1, "asdof", "asdf")`);
     await db.promise().query(`insert into domains values(${last}, ${R}, ${TP}, ${MT}, ${AR}, ${U}, ${MDL}, ${RA}, ${RoTech}, ${LS}, ${RoThink}, ${EoST}, ${EF}, ${RTE}, ${DLoI}, ${RaAoC})`)
     

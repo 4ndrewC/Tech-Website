@@ -1,0 +1,1578 @@
+/* ------------------------------------------------------
+@File: Default Styles
+@Template Name: DigitMin - Bitcoin & Cryptocurrency HTML Template
+@Author: kitket
+@Developed By: Hasan Mahmud
+@Developer URL:https://flatdesigner.net
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+------------------------------------------------------- */
+/* ====================================================== 
+
+Table of Content:
+01/ Variables
+02/ Prefix
+03/ animat
+04/ header
+05/ banner
+06/ mission
+07/ feature
+08/ testimonial
+09/ team
+10/ footer
+11/ responsive
+
+===================================================== */
+/*----------------------------------------------------*/
+/*font Variables*/
+/*Color Variables*/
+/* Button Style */
+@import url(bootstrap.min.css);
+@import url("../../../use.fontawesome.com/releases/v5.5.0/css/all.css");
+@import url(font-awesome.min.css);
+@import url(../vendors/flat-icon/flaticon.css);
+@import url(../vendors/animate-css/animate.css);
+@import url(../vendors/owl-carousel/owl.carousel.min.css);
+@import url(../vendors/magnify-popup/magnific-popup.css);
+@import url(../vendors/jquery-ui/jquery-ui.min.css);
+@import url(../vendors/bootstrap-selector/nice-select.css);
+@import url(../vendors/lightbox/simpleLightbox.css);
+@import url(../vendors/meanMenu/meanmenu.css);
+@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300;400;500;600;700&amp;display=swap");
+.theme_btn {
+  color: #0d2841;
+  text-align: center;
+  font: 600 16px/1 "Hind Guntur", sans-serif;
+  display: inline-block;
+  padding: 12px 25px 8px 25px;
+  background: #17d984;
+  text-transform: uppercase;
+  border: 2px solid #17d984;
+  cursor: pointer;
+  transition: all 300ms linear 0s;
+}
+.theme_btn:hover, .theme_btn:focus {
+  color: #e5f4ff;
+  background: transparent;
+  border: 2px solid #e5f4ff;
+}
+
+.tb_2:hover, .tb_2:focus {
+  color: #06092c;
+  background: transparent;
+  border: 2px solid #06092c;
+}
+
+.b-btn {
+  background: transparent;
+  color: #e5f4ff;
+  border: 2px solid #e5f4ff;
+  padding: 15px 30px 9px 30px;
+  text-align: center;
+}
+.b-btn:hover, .b-btn:focus {
+  background: #17d984;
+  color: #e5f4ff;
+  border: 2px solid #17d984;
+}
+
+.btn_2 {
+  border: 2px solid #06092c;
+  color: #06092c;
+}
+.btn_2:hover, .btn_2:focus {
+  background: #17d984;
+  color: #06092c;
+  border: 2px solid #17d984;
+}
+
+/* Amination */
+.up_animat {
+  animation: float-bob-y infinite 2s linear;
+}
+
+.title {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 70px;
+}
+.title h2 {
+  color: #e5f4ff;
+  font: 700 36px/50px "Hind Guntur", sans-serif;
+  padding-bottom: 15px;
+}
+.title h2 span {
+  color: #17d984;
+}
+.title p {
+  color: #e5f4ff;
+  font: 400 16px/28px "Hind Guntur", sans-serif;
+  margin: 0 auto;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 15px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  background: #17d984;
+  border: 0;
+  box-shadow: none;
+  z-index: 999;
+  color: #fff;
+}
+.scroll-top i {
+  padding: 0;
+}
+.scroll-top i:before {
+  speak: none;
+  display: block;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  animation: TopToBottom 0.3s forwards;
+}
+.scroll-top:hover i:before, .scroll-top:focus i:before {
+  animation: BottomToTop 0.3s forwards;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: white url("../images/preloader.html") no-repeat center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*----------------------------------------------------*/
+/*Prefix Styles*/
+body {
+  font-family: "Hind Guntur", sans-serif;
+  /*Section Fix*/
+  /*Ancore*/
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: #e5f4ff;
+  font-family: "Hind Guntur", sans-serif;
+  margin: 0;
+  font-weight: 700;
+}
+body p {
+  color: #e5f4ff;
+  margin: 0;
+  font: 400 16px/28px "Hind Guntur", sans-serif;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+}
+body ul li {
+  list-style: none;
+}
+body section.row, body header.row, body footer.row {
+  margin: 0;
+}
+body #success {
+  display: none;
+}
+body #error {
+  display: none;
+}
+body iframe {
+  border: none;
+}
+body i:before {
+  margin-left: 0px !important;
+}
+body a, body .btn, body button {
+  outline: none;
+  transition: all 300ms linear 0s;
+}
+body a:before, body a:after, body .btn:before, body .btn:after, body button:before, body button:after {
+  transition: all 300ms linear 0s;
+}
+body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus, body button:hover {
+  outline: none;
+  text-decoration: none;
+  transition: all 300ms linear 0s;
+}
+
+/*----------------------------------------------------*/
+/* Move frame*/
+@keyframes moveRound {
+  0% {
+    background-color: #eee3ff;
+    left: -24px;
+    top: 0px;
+  }
+
+  25% {
+    background-color: #feddfc;
+    left: 100px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: #efe4ff;
+    left: 100px;
+    top: 100px;
+  }
+
+  75% {
+    background-color: #e2fcf4;
+    left: -24px;
+    top: 200px;
+  }
+
+  100% {
+    background-color: #eee3ff;
+    left: -24px;
+    top: 0px;
+  }
+}
+@-webkit-keyframes moveRound {
+  0% {
+    background-color: #eee3ff;
+    left: -24px;
+    top: 0px;
+  }
+
+  25% {
+    background-color: #feddfc;
+    left: 100px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: #efe4ff;
+    left: 100px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: #e2fcf4;
+    left: -24px;
+    top: 100px;
+  }
+
+  100% {
+    background-color: #eee3ff;
+    left: -24px;
+    top: 0px;
+  }
+}
+@keyframes moveShap {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    left: 100px;
+    top: 0px;
+  }
+
+  50% {
+    left: 100px;
+    top: 100px;
+  }
+
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+@keyframes moveShap2 {
+  0% {
+    right: 230px;
+    top: 85px;
+  }
+
+  25% {
+    right: 100px;
+    top: 85px;
+  }
+
+  50% {
+    right: 100px;
+    top: 100px;
+  }
+
+  75% {
+    right: 230px;
+    top: 200px;
+  }
+
+  100% {
+    right: 220px;
+    top: 100px;
+  }
+}
+/* Move frame*/
+/* Heartbeat frame*/
+@-webkit-keyframes heartbeat {
+  to {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+@keyframes heartbeat {
+  to {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+/* Rotation frame*/
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* pulseBig */
+@keyframes pulseBig {
+  0% {
+    box-shadow: 0 0 0 0 #f3f4fc;
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(1, 93, 199, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(1, 93, 199, 0);
+  }
+}
+/* Bottom to Top key frame*/
+@-webkit-keyframes BottomToTop {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes BottomToTop {
+  49% {
+    -moz-transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    -moz-transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes BottomToTop {
+  49% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+/* DoublePulse */
+@-webkit-keyframes doublePulse {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/*----------------------------------------------------*/
+/* Min header area */
+.header_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  border-bottom: 1px solid #1b1e3b;
+}
+.header_area .right-btn {
+  float: right;
+}
+.header_area .right-btn a.th_btn {
+  background: #1b1e3b;
+  color: #e5f4ff;
+  border-radius: 0;
+  padding: 20px 30px;
+  font-size: 14px;
+  display: inline-block;
+  border: 0;
+}
+.header_area .main-menu nav li {
+  display: inline-block;
+  position: relative;
+  margin-right: 30px;
+}
+.header_area .main-menu nav li a {
+  color: #e5f4ff;
+  font: 600 14px/1 "Hind Guntur", sans-serif;
+  display: block;
+  padding: 26px 0 14px 0;
+}
+.header_area .main-menu nav li:hover > a {
+  color: #17d984;
+}
+.header_area .main-menu nav li .submenu {
+  position: absolute;
+  width: 150px;
+  background: #0d0f2d;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms linear 0s;
+  text-align: center;
+  left: 0;
+  top: 110%;
+}
+.header_area .main-menu nav li .submenu li {
+  margin: 0;
+}
+.header_area .main-menu nav li .submenu li a {
+  display: block;
+  padding: 10px 0;
+}
+.header_area .main-menu nav li:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+.header_2 {
+  background: #364767;
+}
+
+.sticky-menu {
+  position: fixed;
+  background: #06092c;
+  z-index: 120;
+}
+
+/*----------------------------------------------------*/
+.banner_area {
+  padding: 300px 0 150px 0;
+  overflow: hidden;
+  background-image: -moz-linear-gradient(41deg, #0d0f2d 0%, #101230 100%);
+  background-image: -webkit-linear-gradient(41deg, #0d0f2d 0%, #101230 100%);
+  background-image: -ms-linear-gradient(41deg, #0d0f2d 0%, #101230 100%);
+}
+.banner_area::before {
+  content: "";
+  position: absolute;
+  background: url(../images/banner/ban_shap1.png) no-repeat left bottom;
+  max-width: 982px;
+  height: 456px;
+  z-index: 1;
+}
+.banner_area .banner_content {
+  position: relative;
+  z-index: 9;
+}
+.banner_area .banner_content h1 {
+  color: #e5f4ff;
+  font: 700 60px/70px "Hind Guntur", sans-serif;
+  margin-bottom: 30px;
+}
+.banner_area .banner_content h1 span {
+  color: #17d984;
+}
+.banner_area .banner_content p {
+  color: #e5f4ff;
+  font: 400 18px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 35px;
+}
+.banner_area .banner_content .btn_list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.banner_area .right-ilustrat {
+  margin-left: 60px;
+  position: relative;
+  z-index: 9;
+}
+.banner_area .particles-js-canvas-el {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.ba_2 {
+  background: #e5f4ff;
+  overflow: hidden;
+}
+.ba_2::before {
+  content: "";
+  position: absolute;
+  background: url(../images/banner/ban_shap2.png) no-repeat left bottom;
+  max-width: 1152px;
+  height: 728px;
+  z-index: 1;
+}
+.ba_2 .banner_content h1 {
+  color: #06092c;
+}
+.ba_2 .banner_content p {
+  color: #5a6d92;
+}
+
+/*----------------------------------------------------*/
+.our_mission_area {
+  background: #101230;
+  padding: 120px 180px 70px 180px;
+}
+.our_mission_area .mission_text {
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding-left: 80px;
+  padding-top: 72px;
+  position: relative;
+}
+.our_mission_area .mission_text::before {
+  content: "";
+  background: url(../images/mission/mis_shap_bg1.png);
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 290px;
+  height: 230px;
+  transition: all 300ms linear 0s;
+  z-index: 5;
+}
+.our_mission_area .mission_text:hover::before {
+  transform: scale(0.9);
+}
+.our_mission_area .mission_text h5 {
+  color: #19c3d9;
+  font: 600 22px/50px "Hind Guntur", sans-serif;
+  margin-bottom: 10px;
+}
+.our_mission_area .mt_1::before {
+  background: url(../images/mission/mission2.png);
+  transition: all 300ms linear 0s;
+}
+.our_mission_area .mt_1:hover::before {
+  transform: scale(0.9);
+}
+.our_mission_area .mt_01::before {
+  background: url(../images/mission/mission3.png);
+  transition: all 300ms linear 0s;
+}
+.our_mission_area .mt_01:hover::before {
+  transform: scale(0.9);
+}
+
+.mining_invest_area {
+  background: #0d0f2d;
+  padding: 110px 0 90px 0;
+  position: relative;
+}
+.mining_invest_area .shape_area {
+  position: absolute;
+  left: 0;
+  bottom: -194px;
+}
+.mining_invest_area .mining_text {
+  margin-bottom: 40px;
+}
+.mining_invest_area .mining_text .ti_2 h2 {
+  text-align: left;
+}
+.mining_invest_area .mining_text .ti_2 p {
+  margin: 0;
+  text-align: left;
+  padding-right: 40px;
+}
+.mining_invest_area .right_img {
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.start_mining_area {
+  background: #101230;
+  padding: 110px 210px 30px 210px;
+}
+.start_mining_area .mining_text {
+  background: #0d2841;
+  padding: 38px 30px;
+  border-radius: 14px;
+  position: relative;
+  margin-bottom: 90px;
+  z-index: 6;
+}
+.start_mining_area .mining_text::before {
+  content: "";
+  position: absolute;
+  background: url(../images/start/icon1.png) no-repeat;
+  width: 36px;
+  height: 37px;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+}
+.start_mining_area .mining_text h3 {
+  color: #e5f4ff;
+  font: 500 35px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 10px;
+}
+.start_mining_area .mining_text h3 span {
+  float: right;
+  font: 500 18px/35px "Hind Guntur", sans-serif;
+}
+.start_mining_area .mining_text span:nth-child(2) {
+  color: #e5f4ff;
+  font: 500 16px/28px "Hind Guntur", sans-serif;
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 60px;
+}
+.start_mining_area .mining_text span:nth-child(3) {
+  color: #17d984;
+  font: 400 14px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 60px;
+}
+.start_mining_area .mining_text a {
+  color: #e5f4ff;
+  font: 700 16px/26px "Hind Guntur", sans-serif;
+  display: block;
+}
+.start_mining_area .mining_text a i {
+  font-size: 12px;
+}
+.start_mining_area .mining_text a:hover, .start_mining_area .mining_text a:focus {
+  color: #17d984;
+}
+.start_mining_area .mt_3::before {
+  background: url(../images/start/icon2.png) no-repeat;
+}
+.start_mining_area .mt_4::before {
+  background: url(../images/start/icon3.png) no-repeat;
+}
+.start_mining_area .mt_5::before {
+  background: url(../images/start/icon4.png) no-repeat;
+}
+.start_mining_area .mt_6::before {
+  background: url(../images/start/icon5.png) no-repeat;
+}
+.start_mining_area .mt_7::before {
+  background: url(../images/start/icon6.png) no-repeat;
+}
+.start_mining_area .mt_8::before {
+  background: url(../images/start/icon7.png) no-repeat;
+}
+.start_mining_area .mt_9::before {
+  background: url(../images/start/icon8.png) no-repeat;
+}
+
+.make_bitcoin {
+  background: #0d0f2d;
+  position: relative;
+}
+.make_bitcoin::before {
+  position: absolute;
+  content: "";
+  background: url(../images/invest/round_shap2.png) no-repeat;
+  left: 105px;
+  width: 86px;
+  height: 77px;
+  z-index: 9;
+  top: 200px;
+  animation: rotation 13s infinite;
+}
+.make_bitcoin::after {
+  position: absolute;
+  content: "";
+  background: url(../images/invest/round_shap3.png) no-repeat;
+  right: 105px;
+  width: 86px;
+  height: 77px;
+  z-index: 9;
+  top: 200px;
+  animation: BottomToTop 5s infinite;
+}
+.make_bitcoin .right_img {
+  margin-left: 70px;
+}
+
+.easily_acces {
+  background: #101230;
+}
+.easily_acces .left_img1 {
+  margin-left: -130px;
+}
+.easily_acces .btn_list li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.easily_acces .btn_list li .brand_list a {
+  margin-right: 5px;
+  color: #fff;
+}
+.easily_acces .btn_list li .brand_list a:hover {
+  color: #17d984;
+}
+
+.ma_2 {
+  background: #f0f9ff;
+}
+.ma_2 .title h2 {
+  color: #06092c;
+}
+.ma_2 .mission_text h5 {
+  color: #06092c;
+}
+.ma_2 .mission_text p {
+  color: #5a6d92;
+}
+
+.mia_2 {
+  background: #e5f4ff;
+}
+.mia_2 .title h2 {
+  color: #06092c;
+}
+.mia_2 .title p {
+  color: #5a6d92;
+}
+.mia_2 .mining_text h3, .mia_2 .mining_text h6 {
+  color: #e9915a;
+}
+
+.sm_2 {
+  background: #f0f9ff;
+}
+
+.make_bitcoin.mbt_2 {
+  background: #f0f9ff;
+}
+
+.easily_acces.ea_2 {
+  background: #e5f4ff;
+}
+
+.home_2 .title h2 {
+  color: #06092c;
+}
+.home_2 p {
+  color: #5a6d92;
+}
+
+/*----------------------------------------------------*/
+.popular_feature_area {
+  background: #0d0f2d;
+  padding: 110px 150px 80px 150px;
+  overflow: hidden;
+}
+.popular_feature_area .feature_box {
+  background: rgba(74, 116, 151, 0.149);
+  opacity: 0.702;
+  padding: 50px 33px 50px 33px;
+  margin-bottom: 40px;
+}
+.popular_feature_area .feature_box .icon_img {
+  margin-bottom: 60px;
+  display: inline-block;
+}
+.popular_feature_area .feature_box .icon_img img {
+  width: auto;
+}
+.popular_feature_area .feature_box h5 {
+  color: #19c3d9;
+  font: 500 22px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 15px;
+}
+.popular_feature_area .owl-dots {
+  text-align: center;
+}
+.popular_feature_area .owl-dots .owl-dot {
+  background: #e5f4ff;
+  width: 5px;
+  height: 12px;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 4px;
+}
+.popular_feature_area .owl-dots .owl-dot.active {
+  transform: scaleY(1.3);
+  background: #17d984;
+}
+
+.our_roadmap_area {
+  background: #101230;
+  padding: 110px 0px 130px 0px;
+  position: relative;
+  overflow: hidden;
+}
+.our_roadmap_area::before {
+  content: "";
+  position: absolute;
+  background: url(../images/road/dot_shape.png) no-repeat;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  width: 1024px;
+  height: 172px;
+  z-index: 2;
+}
+.our_roadmap_area .row_border {
+  padding-top: 109px;
+  border-top: 1px solid rgba(242, 249, 255, 0.2);
+}
+.our_roadmap_area .road_text {
+  position: relative;
+  padding-right: 160px;
+  padding-bottom: 108px;
+}
+.our_roadmap_area .road_text:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #373a6a;
+  left: 0;
+  top: 65%;
+  width: 16px;
+  height: 16px;
+  z-index: 2;
+}
+.our_roadmap_area .road_text::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(242, 249, 255, 0.2);
+  left: 8px;
+  bottom: 0px;
+  width: 1px;
+  height: 60px;
+  z-index: 2;
+}
+.our_roadmap_area .road_text h6 {
+  color: #e5f4ff;
+  font: 700 18px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 5px;
+}
+.our_roadmap_area .road_text p {
+  font: 500 14px/26px "Hind Guntur", sans-serif;
+}
+.our_roadmap_area .road_text .border_line {
+  border: 1px solid rgba(242, 249, 255, 0.2);
+}
+.our_roadmap_area .rac::before {
+  background: #17d984;
+}
+.our_roadmap_area .rac h6 {
+  color: #17d984;
+}
+.our_roadmap_area .rt_2 {
+  padding-right: 0;
+  margin-left: 174px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
+}
+.our_roadmap_area .rt_2::before {
+  top: -44%;
+}
+.our_roadmap_area .rt_2::after {
+  top: -98%;
+}
+
+.pf_2 {
+  background: #e5f4ff;
+}
+.pf_2 .fb_2 {
+  background: #fff;
+}
+
+.ra_2 {
+  background: #f0f9ff;
+}
+.ra_2 .rt_1::after {
+  background: #101230;
+}
+.ra_2 .rt_1 h6 {
+  color: #06092c;
+}
+.ra_2 .rac::before {
+  background: #17d984;
+}
+.ra_2 .rac h6 {
+  color: #17d984;
+}
+.ra_2 .row_border {
+  padding-top: 109px;
+  border-top: 1px solid #101230;
+}
+.ra_2 .row_border .rt_2::after {
+  background: #101230;
+}
+.ra_2 .row_border .rt_2 h6 {
+  color: #06092c;
+}
+.ra_2 .row_border .rac::before {
+  background: #17d984;
+}
+.ra_2 .row_border .rac h6 {
+  color: #17d984;
+}
+
+/*----------------------------------------------------*/
+.what_say_area {
+  background: #394a6a;
+  padding: 110px 0 70px 0;
+  position: relative;
+}
+.what_say_area .dot_right {
+  position: absolute;
+  right: 0;
+  top: 36%;
+  z-index: 3;
+}
+.what_say_area .client_box {
+  margin-bottom: 50px;
+}
+.what_say_area .client_box .client_img {
+  float: left;
+  text-align: center;
+  margin-right: 40px;
+  overflow: hidden;
+}
+.what_say_area .client_box .client_img .c_img {
+  margin-bottom: 25px;
+  position: relative;
+}
+.what_say_area .client_box .client_img .c_img::before {
+  content: "";
+  position: absolute;
+  background: #007aff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 300ms linear 0s;
+}
+.what_say_area .client_box .client_img .c_img:hover::before {
+  right: 0;
+  left: 100%;
+  background: transparent;
+}
+.what_say_area .client_box .client_img .ci_2::before {
+  background: #f05a21;
+}
+.what_say_area .client_box .client_img .ci_3::before {
+  background: #a6c437;
+}
+.what_say_area .client_box .client_img h6 {
+  color: #e5f4ff;
+  font: 700 16px/26px "Hind Guntur", sans-serif;
+}
+.what_say_area .client_box .client_img a {
+  color: #e5f4ff;
+  font: 400 16px/26px "Hind Guntur", sans-serif;
+  display: inline-block;
+}
+.what_say_area .client_box .client_text {
+  background: #e5f4ff;
+  overflow: hidden;
+  padding: 40px 50px;
+}
+.what_say_area .client_box .client_text .icon {
+  margin-bottom: 26px;
+}
+.what_say_area .client_box .client_text p {
+  color: #06092c;
+  font: 600 16px/28px "Hind Guntur", sans-serif;
+}
+
+/*----------------------------------------------------*/
+.team_area {
+  background: #0d0f2d;
+  padding: 110px 0 130px 0;
+  overflow: hidden;
+}
+.team_area .img_box {
+  text-align: center;
+  padding: 30px 30px;
+}
+.team_area .img_box img {
+  max-width: 100%;
+  transition: all 300ms linear 0s;
+}
+.team_area .img_box:hover img {
+  transform: scale(1.1);
+}
+.team_area .img_box h5 {
+  color: #e5f4ff;
+  font: 700 20px/28px "Hind Guntur", sans-serif;
+  margin-top: 40px;
+}
+.team_area .img_box span {
+  color: #697080;
+  font: 400 20px/28px "Hind Guntur", sans-serif;
+  margin-top: 10px;
+}
+.team_area .ib_2 {
+  padding-left: 323px;
+}
+.team_area .ib_3 {
+  padding-right: 323px;
+}
+
+.faq_area {
+  background: #101230;
+  padding: 110px 0 80px 0;
+  position: relative;
+}
+.faq_area::before {
+  position: absolute;
+  content: "";
+  background: url(../images/invest/plane_shap5.png) no-repeat;
+  width: 74px;
+  height: 74px;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  animation: BottomToTop 5s infinite;
+}
+.faq_area::after {
+  position: absolute;
+  content: "";
+  background: url(../images/invest/round_shap4.png) no-repeat;
+  width: 74px;
+  height: 74px;
+  right: 150px;
+  top: 21%;
+  z-index: 9;
+  animation: doublePulse 10s infinite;
+}
+.faq_area .nav-tabs {
+  border-bottom: 1px solid #232642;
+}
+.faq_area .nav-tabs .nav-link.active {
+  color: #e5f4ff;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #17d984;
+}
+.faq_area .nav-tabs .nav-link {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  padding-bottom: 20px;
+}
+.faq_area .nav-tabs .nav-link:nth-child(1) {
+  margin-right: 166px;
+}
+.faq_area .nav-tabs .nav-link:nth-child(2) {
+  margin-right: 166px;
+}
+.faq_area .faq_desc {
+  margin-top: 58px;
+}
+.faq_area .faq_desc h5 {
+  color: #e5f4ff;
+  font: 600 20px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 10px;
+}
+.faq_area .faq_desc p {
+  margin-bottom: 30px;
+}
+
+.brand_area {
+  background: #0d0f2d;
+  padding: 130px 0 130px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.brand_area a.item img {
+  width: auto;
+  margin: 0 auto;
+}
+
+.ta_2 {
+  background: #f0f9ff;
+}
+.ta_2 .img_box h5 {
+  color: #06092c;
+}
+
+.faq_2 {
+  background: #e5f4ff;
+}
+.faq_2 .nav-tabs {
+  border-bottom: 1px solid #cedce9;
+}
+.faq_2 .nav-tabs a.nav-link h6 {
+  color: #06092c;
+}
+.faq_2 .faq_desc h5 {
+  color: #06092c;
+}
+.faq_2 .faq_desc p {
+  color: #5a6d92;
+}
+
+.ba_2 {
+  background: #f0f9ff;
+}
+
+/*----------------------------------------------------*/
+.footer_area {
+  padding: 130px 0 0 0;
+  background: #101230;
+  overflow: hidden;
+}
+.footer_area .footer_widget {
+  margin-bottom: 40px;
+}
+.footer_area .footer_widget .fot_logo {
+  margin-bottom: 35px;
+  display: inline-block;
+}
+.footer_area .footer_widget p {
+  margin-bottom: 30px;
+}
+.footer_area .footer_widget .fot_list li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.footer_area .footer_widget .fot_list li a {
+  color: #e5f4ff;
+  position: relative;
+  display: inline-block;
+}
+.footer_area .footer_widget .fot_list li a::before {
+  position: absolute;
+  content: "";
+  border: 1px dashed #4a7497;
+  padding: 10px 10px;
+  line-height: 1;
+  display: inline-block;
+  transform: rotate(-40deg);
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  left: -9px;
+  top: -6px;
+}
+.footer_area .footer_widget .fot_list li a::before:hover {
+  border: 1px dashed #17d984;
+}
+.footer_area .footer_widget .fot_list li a:hover {
+  color: #17d984;
+}
+.footer_area .footer_widget h5 {
+  color: #e5f4ff;
+  font: 700 25px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 23px;
+}
+.footer_area .footer_widget .input_area input::-webkit-input-placeholder {
+  /* Edge */
+  color: #f0f9ff;
+}
+.footer_area .footer_widget .input_area input:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: #f0f9ff;
+}
+.footer_area .footer_widget .input_area input::placeholder {
+  color: #f0f9ff;
+}
+.footer_area .footer_widget .input_area .form-control {
+  background: rgba(229, 244, 255, 0.051);
+  border-radius: 0;
+  border: 1px solid rgba(74, 116, 151, 0.4);
+  outline: none;
+  margin-bottom: 15px;
+  color: #e5f4ff;
+  max-width: 100%;
+  box-shadow: none;
+}
+.footer_area .footer_widget .cta_list li a {
+  color: #e5f4ff;
+  font: 600 16px/28px "Hind Guntur", sans-serif;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.footer_area .footer_widget .cta_list li a i {
+  margin-right: 8px;
+  font-size: 12px;
+}
+.footer_area .footer_widget .cta_list li a:hover {
+  color: #17d984;
+}
+.footer_area .copy_right {
+  text-align: center;
+  margin-top: 60px;
+  background: #0d0f2d;
+  padding: 25px 0;
+}
+.footer_area .copy_right a {
+  color: #e5f4ff;
+  font: 400 16px/28px "Hind Guntur", sans-serif;
+}
+
+.fa_2 {
+  background: #394a6a;
+}
+.fa_2 .footer_widget p {
+  color: #daf0ff;
+}
+.fa_2 .footer_widget .cta_list li a {
+  color: #daf0ff;
+}
+.fa_2 .cr_2 {
+  background: #364665;
+}
+
+/*----------------------------------------------------*/
+@media (max-width: 1590px) {
+  .our_mission_area {
+    padding: 120px 30px 70px 30px;
+  }
+
+  .start_mining_area {
+    padding: 110px 50px 30px 50px;
+  }
+
+  .popular_feature_area {
+    padding: 109px 50px 80px 50px;
+  }
+}
+@media (max-width: 1440px) {
+  .banner_area .right-ilustrat {
+    margin-left: -10px;
+  }
+
+  .our_mission_area {
+    padding: 120px 0 70px 0px;
+  }
+
+  .start_mining_area {
+    padding: 110px 0px 30px 0px;
+  }
+
+  .mining_invest_area .right_img {
+    margin-left: 0;
+  }
+
+  .popular_feature_area {
+    padding: 109px 0px 80px 0px;
+  }
+}
+@media (max-width: 1199px) {
+  .banner_area .right-ilustrat {
+    margin-left: -10px;
+  }
+
+  .right-ilustrat img {
+    max-width: 100%;
+  }
+
+  .our_mission_area {
+    padding: 120px 0 70px 0px;
+  }
+
+  .title h2 {
+    font: 700 30px/50px "Hind Guntur", sans-serif;
+  }
+
+  .our_mission_area .mission_text {
+    padding-left: 0;
+  }
+
+  .our_roadmap_area .road_text {
+    padding-right: 114px;
+  }
+
+  .our_roadmap_area .rt_2 {
+    padding-right: 0;
+    margin-left: 120px;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+
+  .mining_invest_area .right_img {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .start_mining_area .mining_text {
+    padding: 25px 7px;
+  }
+
+  .easily_acces .left_img1 {
+    margin-left: 0px;
+    max-width: 100%;
+  }
+
+  .team_area .ib_2 {
+    padding-left: 240px;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(1) {
+    margin-right: 60px;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(2) {
+    margin-right: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .header_area {
+    padding-top: 40px;
+  }
+
+  .banner_area {
+    padding: 230px 0 70px 0;
+  }
+
+  .our_mission_area {
+    padding: 70px 0 35px 0px;
+  }
+
+  .mining_invest_area {
+    padding: 70px 0 50px 0;
+  }
+
+  .title {
+    padding-bottom: 30px;
+  }
+
+  .start_mining_area {
+    padding: 70px 0px 0px 0px;
+  }
+
+  .mining_text h3 {
+    padding-top: 10px;
+  }
+
+  .popular_feature_area {
+    padding: 70px 0px 40px 0px;
+  }
+
+  .our_roadmap_area {
+    padding: 70px 0px 70px 0px;
+  }
+
+  .our_roadmap_area .road_text {
+    padding-right: 0;
+  }
+
+  .our_roadmap_area .rt_2 {
+    padding-right: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+
+  .what_say_area {
+    padding: 70px 0 35px 0;
+  }
+
+  .team_area {
+    padding: 70px 0 35px 0;
+  }
+
+  .team_area .ib_2 {
+    padding-left: 0;
+  }
+
+  .team_area .ib_3 {
+    padding-right: 0;
+  }
+
+  .faq_area {
+    padding: 70px 0 35px 0;
+  }
+
+  .brand_area {
+    padding: 70px 0 70px 0;
+  }
+}
+@media (max-width: 767px) {
+  .banner_area {
+    padding: 160px 0 25px 0;
+  }
+
+  .banner_area .banner_content h1 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .banner_area .banner_content p {
+    margin-bottom: 10px;
+  }
+
+  .banner_area .right-ilustrat {
+    margin-top: 50px;
+  }
+
+  .our_mission_area {
+    padding: 30px 0 35px 0px;
+  }
+
+  .mining_text h3 {
+    padding-top: 10px;
+  }
+
+  .our_roadmap_area .road_text::before {
+    top: 55%;
+  }
+
+  .our_roadmap_area .rt_2::before {
+    display: none;
+  }
+
+  .our_roadmap_area .road_text::after {
+    display: none;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(1) {
+    margin-right: 20px;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(2) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .banner_area .right-ilustrat {
+    margin-top: 50px;
+  }
+
+  .title h2 {
+    line-height: 40px;
+  }
+
+  .start_mining_area {
+    padding: 40px 0px 0px 0px;
+  }
+
+  .mining_text h3 {
+    padding-top: 10px;
+  }
+
+  .popular_feature_area {
+    padding: 40px 0px 20px 0px;
+  }
+
+  .our_roadmap_area {
+    padding: 40px 0px 40px 0px;
+  }
+
+  .what_say_area {
+    padding: 50px 0 20px 0;
+  }
+
+  .what_say_area .client_box .client_img {
+    float: none;
+    text-align: center;
+    margin-right: 40px;
+    overflow: hidden;
+    width: 100px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(1) {
+    margin-right: 8px;
+  }
+
+  .faq_area .nav-tabs .nav-link:nth-child(2) {
+    margin-right: 8px;
+  }
+}
+@media (max-width: 420px) {
+  .banner_area .right-ilustrat {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 360px) {
+  .banner_area {
+    padding: 160px 0 25px 0;
+  }
+
+  .banner_area .banner_content h1 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .banner_area .banner_content p {
+    margin-bottom: 10px;
+  }
+
+  .banner_area .right-ilustrat {
+    margin-top: 50px;
+  }
+
+  .our_mission_area {
+    padding: 30px 0 35px 0px;
+  }
+
+  .what_say_area .client_box .client_text {
+    padding: 15px 20px;
+  }
+
+  .what_say_area .client_box .client_img {
+    float: none;
+    text-align: center;
+    margin-right: 40px;
+    overflow: hidden;
+    width: 100px;
+    height: 180px;
+    margin: 0 auto;
+  }
+}
+/*---------------------------------------------------- */
+/*All CSS call*/
+/* Bootstrap CSS */
+/* Icon CSS */
+/* Extra Plugins CSS */
+/* Font family link */
+
+/*# sourceMappingURL=style.css.map */

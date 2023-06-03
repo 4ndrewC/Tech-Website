@@ -2,7 +2,7 @@
 <html>
 	<head>        
 		<title>Admin Management</title>
-		<link rel = "icon" href = "icon.png">
+		<link rel = "icon" type = "image/png" href = "/testuploads/favicon.png">
 		<meta name = "viewport" content = "width=device-width, initial-scale=1">
 		<meta charset = "utf-8"> 
 	</head>
@@ -14,13 +14,13 @@
 			font-family: Arial, sans-serif;
 			font-size: 16px;
 			line-height: 1.5;
-			color: #fff;
+			color: black;
+		
 		}
 		#techtools{
-			margin: 20px;
 			display: table;
+			min-width:100%;
 			box-sizing: border-box;
-			overflow-x: scroll;
 			border-collapse: collapse;
 		}
 
@@ -43,22 +43,13 @@
 		#techtools .head{
 			padding-top: 12px;
 			padding-bottom: 12px;
-			text-align: left;
 			background-color: #001d6c;;
 			color: white;
 			font-weight: bold;
 			text-transform: uppercase;
 			font-size: 14px;
-		}
-
-		h1, h2{
-			padding: 0px 20px;
-			margin:0;
-			color: #FFF;
-			font-weight: bold;
-			text-transform: uppercase;
-			font-size: 36px;
 			text-align: center;
+
 		}
 
 		h2{
@@ -92,10 +83,12 @@
 		#popup {
 			display: none;
 			position: fixed;
-			top: 40%;
-			left: 10%;
-			max-width:80%;
-			padding: 10px;
+			top: 3%;
+			left: 3%;
+			/*width:1200px;*/
+			width:95%;
+			
+			padding: 12px;
 			margin: auto;
 			background: #FFF;
 			border: 2px solid #fff;
@@ -173,13 +166,12 @@
 		textarea,
 		input[type="file"] {
 			width: 100%;
-			height: 50px;
+			height: 150px;
 			padding: 10px;
 			margin-bottom: 20px;
-			/* border-radius: 5px; */
 			border: 1px solid var(--primary-color);
 			background-color: white;
-			color: var(--text-color);
+			color: black;
 		}
 		
 		/* Style the submit button */
@@ -190,12 +182,44 @@
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
+			
 		}
-		
+	
 		/* Style the checkboxes */
 		input[type="checkbox"] {
-			margin-bottom: 10px;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			
+			width: 20px;
+			height: 20px;
+			border: 2px solid #aaa;
+			border-radius: 4px;
+			background-color: #f2f2f2;
+			margin-right: 10px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			vertical-align: middle;
 		}
+
+		input[type="checkbox"]:hover {
+			border-color: #555;
+		}
+
+		input[type="checkbox"]:checked {
+			border-color: #0078d7;
+			background-color: #0078d7;
+			color: #ffffff;
+		}
+
+		input[type="checkbox"]:checked:before {
+			content: "\2714";
+			font-size: 14px;
+			line-height: 20px;
+			text-align: center;
+			display: block;
+		}
+
 		
 		/* Style the left-aligned text */
 		.left {
@@ -214,24 +238,232 @@
 		.side{
 			width: 50%;
 			display: inline-block;
+			padding: 20px;
+		}
+		.side h2{
+			padding: 20px;
+			padding-bottom:0px;
+			margin: 0;
+			width: auto;
+		}
+		.bigwrap{
+			background: #EAEAEA;
+			border-radius: 10px;
+			padding-bottom: 10px;
+			border: 2px solid #C0C0C0;
+		}
+		.bigwrap p{
+			margin-left: 20px;
+			font-size:10px;
+			padding-bottom: 20px;
+		}
+		.tablewrap{
+			overflow-x: scroll;
 		}
 		.id1{
 			pointer-events: none;
 		}
-		
+		ul.categorychecklist {
+			list-style:none;
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: row;
+	    }
+	    .selectit{
+			color: black;
+	    }
+	    li.popular-category{list-style: none; display:inline-block; }
+	    .popup ul{
+			display: flex;
+		}
+		.checkbox-tl{
+			list-style: none;
+			padding-right: 20px;
+		}
+		#closebutton{
+			color: #FFF;
+			background: #3255A4;
+			display: block;
+			width: 20px;
+			height: 20px;
+			text-decoration: none;
+			float: right;
+			text-align: center;
+		}
+
+		.popup #techtools{
+			display: block;
+			width: 90%;
+			overflow-x: scroll;
+		}
+
+		#header{
+			background: #FFF;
+			color: #001141;
+			margin: 20px 0px;
+			padding: 20px;
+			border-bottom: 10px solid #3255A4;
+		}
+		#header h1{
+			margin: 0;
+			font-size:45px;
+		}
+		.cell form, .cell .edit{
+			width:100%;
+			text-align: center;
+		}
+		.cell button{
+			display: inline-block;
+		}
+		.good{
+			background: #008800;
+		}
+		.bad{
+			background: #DD0000;
+		}
+		.ok{
+			background: #d79729;
+		}
+		#action:hover{
+			background: #7295D4;
+		}
+		#up, #down{
+			width: 0;
+			height:0;
+			display:inline-block;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			cursor: pointer;
+		}
+		#down{
+			border-top:10px solid #3255A4;
+		}
+		#up{
+			border-bottom:10px solid #3255A4;
+		}
+		#text{
+			overflow-y: hidden;
+			padding-bottom:10px;
+			transition: 2s ease;
+		}
+		.invisible{
+			height: 0;
+		}
 	</style>
 
-	<body>	
-		<h1>Tech Tool Management Portal</h1>
-		<button type="submit" id = "action" onClick = "csvout()">Export to Excel</button> 
+	<body>
+		<div id = "header">
+			<h1>Tech Tool Management Portal</h1>
+			<p>Note: for admin usage only. If you are not a network administrator, please refrain from making changes to this site. Any changes made here <b>will</b> be immediately visible on the BIBS·C Tech Tools Website. Changes made here may be difficult to reverse, so you are fully responsible for understanding the Actions you take (see below).</p>
+			<div id = "text">
+				<br>
+				<p>Action Information:
+					<ul style = "margin-left: 40px">
+						<li>EDIT: allows you to view and make changes to all the information associated with each tech tool, including descriptions and which strands the tool will appear under. Once changes are submitted, past versions will not be saved.</li>
+						<li>ACCEPT: this will move a tech tool into the "Accepted" section, thus immediately making it appear live on the tech tool site</li>
+						<li>REMOVE: this will move a tech tool into the "To Be Reviewed" section, removing it from the tech tool site but keeping it on the database for possible future reference</li>
+						<li>DELETE: this will permanently delete a tech tool from the database, and is irreversible, so use caution</li>
+					</ul>
+				</p>
+				<br>
+				<!-- <p>It is highly recommended that you make backups of this database:  <button type="submit" id = "action" onClick = "csvout()">Export to Excel</button> </p> -->
+			</div>
+			<div style = "text-align: center">
+				<div id = "up" onClick = "collapse()"></div>
+				<div id = "down" onClick = "expand()"></div>
+			</div>
+			<!-- <script>
+				collapse();
+				function expand(){
+					document.getElementById("text").classList.remove("invisible");
+					document.getElementById("up").style.display = "inline-block";
+					document.getElementById("down").style.display = "none";
+				}
+				function collapse(){
+					document.getElementById("text").classList.add("invisible");
+					document.getElementById("down").style.display = "inline-block";
+					document.getElementById("up").style.display = "none";
+				}
+			</script> -->
+		</div>
+			
 		<script>
-			function reply_click(clicked_id, name,  des,  link, display)
+			collapse();
+				function expand(){
+					document.getElementById("text").classList.remove("invisible");
+					document.getElementById("up").style.display = "inline-block";
+					document.getElementById("down").style.display = "none";
+				}
+				function collapse(){
+					document.getElementById("text").classList.add("invisible");
+					document.getElementById("down").style.display = "inline-block";
+					document.getElementById("up").style.display = "none";
+				}
+			function reply_click(clicked_id, name,  des,des2, des3, des4, link, display, R,TP, MT, AR, U, MDL, RA, RoTech, LS, RoThink, EoST, EF, RTE, DLoI, RaAoC )
 			{	
+				document.querySelectorAll('input[type=checkbox]').forEach(function(el) {
+					el.checked = false;
+				});
 				document.forms['editTech'].elements['id1'].value =clicked_id;
 				document.forms['editTech'].elements['Techname'].value =name;
 				document.forms['editTech'].elements['description'].value =des;
+				document.forms['editTech'].elements['description2'].value =des2;
+				document.forms['editTech'].elements['description3'].value =des3;
+				document.forms['editTech'].elements['description4'].value =des4;
 				document.forms['editTech'].elements['Link'].value = link;
 				document.forms['editTech'].elements['display'].value =display;
+				if (R==1){
+					document.forms['editTech'].elements['R'].checked =true;
+				}
+				if (TP==1){
+					document.forms['editTech'].elements['TP'].checked =true;
+				}
+				if (MT==1){
+					document.forms['editTech'].elements['MT'].checked =true;
+				}
+				if (AR==1){
+					document.forms['editTech'].elements['AR'].checked =true;				
+				}
+				if (U==1){
+					document.forms['editTech'].elements['U'].checked =true;
+				}
+				if (MDL==1){
+					document.forms['editTech'].elements['MDL'].checked =true;
+				}
+				if (RA==1){
+					document.forms['editTech'].elements['RA'].checked =true;
+				}
+				if (RoTech==1){
+					document.forms['editTech'].elements['RoTech'].checked =true;
+				}
+				if (LS==1){
+					document.forms['editTech'].elements['LS'].checked =true;
+				}	
+				if (RoThink==1){
+					document.forms['editTech'].elements['RoThink'].checked =true;
+				}	
+				if (EoST==1){
+					document.forms['editTech'].elements['EoST'].checked =true;
+				}	
+				if (EF==1){
+					document.forms['editTech'].elements['EF'].checked =true;
+				}	
+				if (RTE==1){
+					document.forms['editTech'].elements['RTE'].checked =true;
+				}
+				if (DLoI==1){
+					document.forms['editTech'].elements['DLoI'].checked =true;
+				}	
+				if (RaAoC==1){
+					document.forms['editTech'].elements['RaAoC'].checked =true;
+				}	
+			}
+			function reply_click1(clicked_id, ...results)
+			{	
+				var resultsArray = JSON.parse(results);
+
+  // Access the elements of the array
+  console.log(resultsArray);
 			}
 			$ = function(id) {
 			return document.getElementById(id);
@@ -243,115 +475,160 @@
 			var hide = function(id) {
 				$(id).style.display ='none';
 			}
-			function csvout(){
-				csvContent = "data:text/csv;charset=utf-8,";
-				csvContent += "id, techname, description, link, displaytext, accepted, username, contact,"; 
-				csvContent += "R, TP, MT, AR, U, MDL, RA, RoTech, LS,RoThink, EoST, EF, RTE, DLoI, RaAoC,";
-				csvContent += "\r\n";
-				<% for(let i=0; i<results[0].length; i++){ %>
-					csvContent += "<%=results[i].id %>" + ",";
-					csvContent += "<%=results[i].techname%>" + ",";
-					csvContent += "<%=results[i].description%>" + ",";
-					csvContent += "<%=results[i].link%>" + ",";
-					csvContent += "<%=results[i].displaytext%>" + ",";
-					csvContent += "<%=results[i].accepted%>" + ",";
-					csvContent += "<%=results[i].username%>" + ",";
-					csvContent += "<%=results[i].contact%>" + ",";
-					csvContent += "\r\n";
-				<% } %>
-				
-				var now = new Date();
-				var log = "BGTechTools updated " + now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+" "+now.getHours()+""+now.getMinutes();
-				var encodedUri = encodeURI(csvContent);
-				var link = document.createElement("a");
-				link.setAttribute("href", encodedUri);
-				link.setAttribute("download", log + ".csv");
-				document.body.appendChild(link); 
-				link.click(); var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-				today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-			}
+			
 		</script>     
 		<div id = "all">
 			<div class = "side">
-				<h2>To Be Reviewed</h2>
-				<div id="techtools">
-					<div class = "row">
-						<div class = "cell head">ID #</div>
-						<div class = "cell head">Name</div>
-						<div class = "cell head">username</div>
-						<div class = "cell head">Accept</div>
-					</div>
+				<div class = "bigwrap">
+					<h2>To Be Reviewed</h2>
+					<p>Content here has just been submitted through the official site form and are not visible on the tech tool site.</p>
+					<div class = "tablewrap">
+						<table id="techtools">
+							<tr class = "row">
+								<th class = "cell head">ID</th>
+								<th class = "cell head">Tool Name</th>
+								<th class = "cell head">Username</th>
+								<th class = "cell head" colspan = "3">Actions</th>
+							</tr>
 
-					<% for(let i=0;i< results.length;i++){ %>
-					<% if(!results[i].accepted){%>
-					<div class = "row">
-						<div class = "cell" ><%= results[i].id %></div>
-						<div class = "cell"><%= results[i].techname %></div>
-						<div class = "cell"><%= results[i].username %></div>
-						<div class = "cell">
-							<form action="/admin/add" method="post">
-								<button type="submit" id = "action"name="id" value="<%=results[i].id%>">Accept</button>          
-							</form>
-						</div>
+							<% for(let i=0;i< results.length;i++){ %>
+							<% if(!results[i].accepted){%>
+							<tr class = "row">
+								<td class = "cell" ><%= reg[i].id %></td>
+								<td class = "cell"><%= reg[i].techname %></td>
+								<td class = "cell"><%= reg[i].username %></td>
+								<td class = "cell">
+									<div class = "edit">
+										
+										 <button type="button" name="id" id="<%=results[i].id%>" onclick="show('popup');reply_click('<%=results[i].id%>', '<%=des[i].techname%>', `<%=des[i].tl1_desc%>`, `<%=des[i].tl2_desc%>`, `<%=des[i].tl3_desc%>`, `<%=des[i].tl4_desc%>`, '<%=results[i].link%>', '<%=results[i].displaytext%>', '<%=domains[i].R%>', '<%=domains[i].TP%>', '<%=domains[i].MT%>', '<%=domains[i].AR%>', '<%=domains[i].U%>', '<%=domains[i].MDL%>', '<%=domains[i].RA%>', '<%=domains[i].RoTech%>', '<%=domains[i].LS%>', '<%=domains[i].RoThink%>', '<%=domains[i].EoST%>', '<%=domains[i].EF%>', '<%=domains[i].RTE%>', '<%=domains[i].DLoI%>', '<%=domains[i].RaAoC%>')">Edit</button> 
+										
+
+									</div>
+								</td> 
+								<td class = "cell">
+									<form action="/admin/add" method="post">
+										<button type="submit" id = "action" name="id" class = "good" value="<%=results[i].id%>">Accept</button>          
+									</form>
+								</td>
+								<td class = "cell background">
+									<form action="/admin/delete" method="post">
+										<button type="submit" id = "action" name="id" class = "bad" value="<%=results[i].id%>">DELETE</button>          
+									</form>
+								</td>
+								
+							</tr>
+							<% } %>
+							<% } %>
+						</table>
 					</div>
-					<% } %>
-					<% } %>
 				</div>
 			</div>
 
 			<div class = "side">
-				<h2>Accepted</h2>
-				<div id="techtools">
-					<div class = "row">
-						<div class = "cell head" contenteditable="true">ID #</div>
-						<div class = "cell head">Name</div>
-						<div class = "cell head">username</div>
-						<div class = "cell head">Action</div>
-					</div>
+				<div class = "bigwrap">
+					<h2>Accepted</h2>
+					<p>Content here has been reviewed and is visible on the tech tool site.</p>
+					<div class = "tablewrap">
+						<table id="techtools">
+							<tr class = "row">
+								<th class = "cell head" contenteditable="true">ID</th>
+								<th class = "cell head">Tool Name</th>
+								<th class = "cell head">Username</th>
+								<th class = "cell head" colspan = "2">Actions</th>
+							</tr>
 
-					<% for(let i=0;i< results.length;i++){ %>
-					<% if(results[i].accepted){%>
-					<div class = "row">
-						<div class = "cell" ><%= results[i].id %></div>
-						<div class = "cell" ><%= results[i].techname %></div>
-						<div class = "cell" ><%= results[i].username %></div>
-						<div class = "cell">
-							<form action="/admin/remove" method="post">
-								<button type="submit" name="id" value="<%=results[i].id%>">Remove</button>
-							</form>
-							<br>
-							
-							<button type="submit" name="id" id="<%=results[i].id%>"  onclick='show("popup");reply_click(this.id, "<%=results[i].techname%>","<%=results[i].description%>","<%=results[i].link%>","<%=results[i].displaytext%>");'  >Edit</button>
-						</div>
+							<% for(let i=0;i< results.length;i++){ %>
+							<% if(results[i].accepted){%>
+							<tr class = "row">
+								<td class = "cell" ><%= reg[i].id %></td>
+								<td class = "cell" ><%= reg[i].techname %></td>
+								<td class = "cell" ><%= reg[i].username %></td>
+								
+								<td class = "cell">
+									<div class = "edit">
+										<!-- <button type="submit" name="id" id="<%=results[i].id%>" onclick="show('popup')";reply_click(this.id, "<%=results[i].techname%>","<%=des[i].tl1_desc%>","<%=des[i].tl2_desc%>", 
+										"<%=des[i].tl3_desc%>","<%=des[i].tl4_desc%>",   "<%=results[i].link%>","<%=results[i].displaytext%>", 
+										"<%=domains[i].R%>", "<%=domains[i].TP%>","<%=domains[i].MT%>","<%=domains[i].AR%>","<%=domains[i].U%>",							
+										"<%=domains[i].MDL%>","<%=domains[i].RA%>","<%=domains[i].RoTech%>","<%=domains[i].LS%>",
+										"<%=domains[i].RoThink%>","<%=domains[i].EoST%>","<%=domains[i].EF%>","<%=domains[i].RTE%>",
+										"<%=domains[i].DLoI%>","<%=domains[i].RaAoC%>);">edit -->
+										<button type="button" name="id" id="<%=results[i].id%>" onclick="show('popup');reply_click('<%=results[i].id%>', '<%=des[i].techname%>', '<%=des[i].tl1_desc%>', '<%=des[i].tl2_desc%>', '<%=des[i].tl3_desc%>', '<%=des[i].tl4_desc%>', '<%=results[i].link%>', '<%=results[i].displaytext%>', '<%=domains[i].R%>', '<%=domains[i].TP%>', '<%=domains[i].MT%>', '<%=domains[i].AR%>', '<%=domains[i].U%>', '<%=domains[i].MDL%>', '<%=domains[i].RA%>', '<%=domains[i].RoTech%>', '<%=domains[i].LS%>', '<%=domains[i].RoThink%>', '<%=domains[i].EoST%>', '<%=domains[i].EF%>', '<%=domains[i].RTE%>', '<%=domains[i].DLoI%>', '<%=domains[i].RaAoC%>')">Edit</button>
+									
+										
+									</div>
+								</td>
+								<td class = "cell">
+									<form action="/admin/remove" method="post">
+										<button type="submit" name="id" value="<%=results[i].id%>" class = "ok">Remove</button>
+									</form>	
+								</td>
+								
+							</tr>
+							<% } %>
+							<% } %>
+						</table>
 					</div>
-					<% } %>
-					<% } %>
 				</div>
 			</div>
 		</div>
 
 		<div class="popup" id="popup"> 
-			<a href="#" onclick="hide('popup')">&times;</a>
-]				<form name = "editTech" action="/admin/edit" method="post"> 
-					<div id = "techtools">
-						<div class = "row">
-							<div class = "cell head">Tool ID</div>
-							<div class = "cell head">Tool Name:</div>
-							<div class = "cell head">Description</div>
-							<div class = "cell head">Link</div>
-							<div class = "cell head">Display Text</div>
+			<a href="#" onclick="hide('popup')" id = "closebutton">&times;</a>
+			<form name = "editTech" action="/admin/edit" method="post"> 
+				<table id = "techtools">
+					<tr class = "row">
+						<th class = "cell head">Tool ID</th>
+						<th class = "cell head">Tool Name:</th>
+						<th class = "cell head">TL1Description</th>
+						<th class = "cell head">TL2Description</th>
+						<th class = "cell head">TL3Description</th>
+						<th class = "cell head">TL4Description</th>
+						<th class = "cell head">Link</th>
+						<th class = "cell head">Display Text</th>
+					</tr>
+					<tr class = "row">
+						<td class = "cell"><textarea type="text" name="id1" placeholder="id1" id = "id1"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="Techname" placeholder="Techname" id = "Techname"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="description" placeholder="No Tl1 description" id = "description"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="description2" placeholder="No Tl2 description" id = "description2"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="description3" placeholder="No Tl3 description" id = "description3"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="description4" placeholder="No Tl4 description" id = "description4"><br></textarea></td>
+						<td class = "cell"><textarea type="text" name="Link" placeholder="Link" id = "Link"><br></textarea>	</td>
+						<td class = "cell"><textarea type="text" name="display" placeholder="Link" id = "display"><br></textarea></td>
+					</tr>
+				</table>		
+				<br>
+				<h3>Strands</h3> 
+				<div class="checkbox-container">
+					<ul>
+						<div class = "checkbox-tl">
+							<li><input type="checkbox" name="R">Relationship<br></li>
+							<li><input type="checkbox" name="TP" value = true>Teacher Planning<br></li>
+							<li><input type="checkbox" name="MT" value = true>Modify Their Teaching<br></li>
+							<li><input type="checkbox" name="AR" value = true>Achieve Readiness<br></li>
 						</div>
-						<div class = "row">
-							<div class = "cell"><textarea type="text" name="id1" placeholder="id1" id = "id1"><br></textarea></div>
-							<div class = "cell"><textarea type="text" name="Techname" placeholder="Techname" id = "Techname"><br></textarea></div>
-							<div class = "cell"><textarea type="text" name="description" placeholder="description" id = "description"><br></textarea></div>
-							<div class = "cell"><textarea type="text" name="Link" placeholder="Link" id = "Link"><br></textarea>	</div>
-							<div class = "cell"><textarea type="text" name="display" placeholder="Link" id = "display"><br></textarea></div>
+						<div class = "checkbox-tl">
+							<li><input type="checkbox" name="U" value = true>Understanding<br></li>
+							<li><input type="checkbox" name="MDL" value = true>Multi-Dimensional Learning<br></li>
+							<li><input type="checkbox" name="RA" value = true>Reasoned Arguments<br></li>
+							<li><input type="checkbox" name="RoTech" value = true>Repertoire of Techniques<br></li>
+							<li><input type="checkbox" name="LS" value = true>Learning Spaces<br></li>
 						</div>
-					</div>			
-					<button type="submit" id = "btn">Submit</button>
-				</form>
-
+						<div class = "checkbox-tl">
+							<li><input type="checkbox" name="RoThink" value = true>Reflect on Thinking<br></li>
+							<li><input type="checkbox" name="EoST" value = true>Evidence of Student Learning<br></li>
+							<li><input type="checkbox" name="EF" value = true>Employ Feedback<br></li>
+						</div>
+						<div class = "checkbox-tl">
+							<li><input type="checkbox" name="RTE" value = true>Risk Taking Environment<br></li>
+							<li><input type="checkbox" name="DLoI" value = true>Deepening Lines of Inquiry<br></li>
+							<li><input type="checkbox" name="RaAoC" value = true>Responsibility and Aspects of Citizenship<br></li>
+						</div>
+					</ul>
+				</div>
+				<br>
+				<button type="submit" id = "btn">Submit</button>
+			</form>
 		</div>
 	</body>
 </html>

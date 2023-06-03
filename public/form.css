@@ -1,0 +1,73 @@
+/*General*/
+html{
+  overflow-y: scroll;
+}
+body{
+  margin: 0px;
+  /*background: #000;*/
+}
+body *{
+  box-sizing: border-box;
+  font-family: arial;
+  color: #3255A4;
+}
+/*Form elements*/
+#container{
+  margin: auto;
+}
+#container{
+  border: 0.25em #3255A4 solid;
+  padding: 0.625em;
+  width: 31.25em;
+}
+form *{
+  margin: 0.3125em 0px;
+}
+form{
+  width: 25em;
+  margin: auto;
+}
+p{
+  width: 6.25em;
+  display: inline-block;
+}
+p.left{
+  margin-right: 6.8em;
+}
+input.left{
+  margin-right: 3em;
+}
+#description{
+  width: 100%;
+  height: 10%;
+}
+#submit{
+  margin: 0.9375em 0px 0px 28em;
+}
+#noe{
+  display: none;
+}
+@media only screen and (max-width: 1080px){
+  #container{
+     width: none;
+     height: auto;
+  }
+  p{
+     width: 100%;
+  }
+  input[type="text"],
+  input[type="button"],
+  textarea,
+  button {
+     width: 100%;
+  }
+  #submit{
+     margin: 0.9375em 0px 0px 0;
+  }
+  #noe{
+   display: block;
+  }
+  #noe2{
+   display: none;
+  }
+}

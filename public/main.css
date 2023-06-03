@@ -375,20 +375,23 @@ footer a{
 	font-size:12px;
 	border-radius: 100%;
 	padding: 5px;
+
 }
 
 .techtip .img{
-	width: 20%;
+	width: 15%;
 }
 .techtip img{
 	width: 100%;
 }
 .techtip .desc{
-	width: 40%;
+	width: 50%;
 	padding: 5px 0 0 15px;
+	font-size: 18px;
 }
 .techtip .link{
 	width: 35%;
+	font-size: 18px;
 	padding: 5px 0 0 40px;
 }
 .techtip ul{

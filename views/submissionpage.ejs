@@ -1,54 +1,58 @@
 <html>
-    <title>Registeration Form</title>
-    <head>
-        <link rel="stylesheet" href="./public/form.css">
-        <link rel="icon" href="https://www.mrdavison.org/projects/source/logo.jpg">
-    </head>
-    <body>
-        <div align="center" id="">
-            <form action="/submission/submitted" method="post" id="form" enctype="multipart/form-data">
-                <p class="left">Full Name:<br>
-                <input type="text" name="UserName" placeholder="Name" align="center"><br></p>
-                <p class="left">Tool Name:<br>
-                <input type="text" name="Techname" placeholder="Techname" id = "username" ><br></p>
-                <p class="left">Please give a description of your tool and how it supports the substrands (2-3 sentences):<br>  
-                <textarea type="text" name="Description" placeholder="Description"></textarea><br>
-                </p>
-                
-
-                <p>Select the categories that your tool goes under:<br></p>
-                <div class="checkbox-container">
-                <input type="checkbox" name="R">Relationship<br>
-                <input type="checkbox" name="TP" value = true>Teacher Planning<br>
-                <input type="checkbox" name="MT" value = true>Modify Their Teaching<br>
-                <input type="checkbox" name="AR" value = true>Achieve Readiness<br>
-                <input type="checkbox" name="U" value = true>Understanding<br>
-                <input type="checkbox" name="MDL" value = true>Mulit-Dimensional Learning<br>
-                <input type="checkbox" name="RA" value = true>Reasoned Arguments<br>
-                <input type="checkbox" name="RoTech" value = true>Repertoire of Techniques<br>
-                <input type="checkbox" name="LS" value = true>Learning Spaces<br>
-                <input type="checkbox" name="RoThink" value = true>Reflect on Thinking<br>
-                <input type="checkbox" name="EoST" value = true>Evidence of Student Learning<br>
-                <input type="checkbox" name="EF" value = true>Employ Feedback<br>
-                <input type="checkbox" name="RTE" value = true>Risk Taking Environment<br>
-                <input type="checkbox" name="DLoI" value = true>Deepening Lines of Inquiry<br>
-                <input type="checkbox" name="RaAoC" value = true>Responsibility and Aspects of Citizenship<br>
-                </div>
-                
-                <p class="left">Please provide a link providing additional information for the tool<br> 
-                <input type="text" name="link" palceholder="Official Link"><br></p>  
-                
-                <p class="left">Please provide the text to be displayed for the link above<br>
-                <input type="text" name="displaytext" placeholder="Display Text"><br></p>
-                
-                <p class="left">Please provide an image for your tech tool<br>
-                <input type="file" name="file"><br></p>
-                    
-                    
-                
-                <button type="submit" id = "btn" value="Upload">Submit</button>
-                
-            </form>
-        </div>
-    </body>
+<head>
+<link rel="stylesheet" href="../public/form.css">
+<link rel="icon" href="https://www.mrdavison.org/projects/source/logo.jpg">
+</head>
+<body>
+<div id="container">
+<form action="/submission" method="post" id="form" enctype="multipart/form-data">
+    <p class="left">Full Name</p>
+    <input type="text" name="UserName" id="noe">
+    <p>Email</p>
+    <input type="text" name="UserName" class="left" id="noe2" required>
+    <input type="text" name="email" id="noe2" required>
+    <input type="text" name="email" id="noe">
+    <div>Tool Name</div>
+    <input type="text" name="Techname" class="left">
+    <p style="margin-right:0px;">Upload image<input type="file" name="file">
+    </p>
+    <!-- <input type="button" name="toolimage" value="Upload" onclick=""> -->
+    <!--Some box here that shows the file name? IDK-->
+    <p>TL1</p>
+    <textarea name="tl1_desc" id="description" placeholder="TL1 Description"></textarea>
+    <p>TL2</p>
+    <textarea name="tl2_desc" id="description" placeholder="TL2 Description"></textarea>
+    <p>TL3</p>
+    <textarea name="tl3_desc" id="description" placeholder="TL3 Description"></textarea>
+    <p>TL4</p>
+    <textarea  name="tl4_desc" id="description" placeholder="TL4 Description"></textarea>
+    <div>Domians</div>
+    <div class="checkbox-container">
+        <input type="checkbox" name="R" value = true>TL1: Relationships<br>
+        <input type="checkbox" name="TP" value = true>TL1: Teacher Planning<br>
+        <input type="checkbox" name="MT" value = true>TL1: Modify Their Teaching<br>
+        <input type="checkbox" name="AR" value = true>TL1: Achieve Readiness<br>
+        <input type="checkbox" name="U" value = true>TL2: Understanding<br>
+        <input type="checkbox" name="MDL" value = true>TL2: Multi-Dimensional Learning<br>
+        <input type="checkbox" name="RA" value = true>TL2: Reasoned Arguments<br>
+        <input type="checkbox" name="RoTech" value = true>TL2: Repertoire of Techniques<br>
+        <input type="checkbox" name="LS" value = true>TL2: Learning Spaces<br>
+        <input type="checkbox" name="RoThink" value = true>TL3: Reflect on Thinking<br>
+        <input type="checkbox" name="EoST" value = true>TL3: Evidence of Student Learning<br>
+        <input type="checkbox" name="EF" value = true>TL3: Employ Feedback<br>
+        <input type="checkbox" name="RTE" value = true>TL4: Risk-Taking Environment<br>
+        <input type="checkbox" name="DLoI" value = true>TL4: Deepening Lines of Inquiry<br>
+        <input type="checkbox" name="RaAoC" value = true>TL4: Responsibility and Aspects of Citizenship<br>
+    </div>
+    <!--Add Elements later--><br>
+    <p class="left">Link</p>
+    <input type="text" name="link" id="noe">
+    <p>Display Text</p>
+    <input type="text" name="link" class="left" id="noe2" required>
+    <input type="text" name="displaytext" id="noe2" required>
+    <input type="text" name="displaytext" id="noe">
+    <button type="submit" id = "submit" value="Upload">Submit</button>
+</form>
+</div>
+</body>
 </html>

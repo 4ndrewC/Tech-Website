@@ -1,0 +1,43 @@
+create table submission(
+    id int(255),
+    techname varchar(255),
+    description text,
+    link varchar(255),
+    displaytext varchar(255),
+    accepted boolean,
+    username varchar(255),
+    contact varchar(255)
+)
+
+create table submission(
+    id int(255),
+    techname varchar(255),
+    tl1_desc text,
+    tl2_desc text,
+    tl3_desc text,
+    tl4_desc text,
+    link varchar(255),
+    displaytext varchar(255),
+    accepted boolean,
+    username varchar(255),
+    contact varchar(255)
+)
+
+create table domains(
+    id int(255),
+    R boolean,
+    TP boolean,
+    MT boolean,
+    AR boolean,
+    U boolean, 
+    MDL boolean,
+    RA boolean,
+    RoTech boolean,
+    LS boolean,
+    RoThink boolean,
+    EoST boolean,
+    EF boolean,
+    RTE boolean,
+    DLoI boolean,
+    RaAoC boolean
+)

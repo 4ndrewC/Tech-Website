@@ -2,7 +2,7 @@
     <head>
         <title>TL1: Knowing</title>
         <link rel = "stylesheet" href = "../public/main.css">
-        <link rel = "icon" href = "icon.png">
+        <link rel = "icon" type = "image/png" href = "/testuploads/favicon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
         <meta charset = "utf-8">
     </head>
@@ -33,19 +33,19 @@
             <form class = "filters" method = "post" action='/tl1'>
                 <div class = "label">
                     <span class = "n1">Relationships <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHER/STUDENT RELATIONSHIPS ARE PROACTIVE AND POSTIVE. </div>
+                    <div class = "overlay">Teacher/student relationships are proactive and postive. </div>
                 </div>
                 <div class = "label">
                     <span class = "n2">Teacher Planning <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHER PLANNING IS DRIVEN BY KNOWLEDGE OF EACH STUDENT'S NEXT STEPS FOR LEARNING.</div>
+                    <div class = "overlay">Teacher planning is driven by knowledge of each student's next steps for learning.</div>
                 </div>
                 <div class = "label">
                     <span class = "n3">Modify their Teaching <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS MODIFY THEIR TEACHING BASED ON WHAT STUDENTS NEED TO SUCCEED.</div>
+                    <div class = "overlay">Teachers modify their teaching based on what students need to succeed.</div>
                 </div>
                 <div class = "label">
                     <span class = "n4">Achieve Readiness <input type = "checkbox" name = "s4" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS ACHIEVE READINESS FOR LEARNING BY CONSTRUCTING TASKS OR OFFERING LEARNING CHOICES AT DIFFERENT LEVELS OF COMPLEXITY.</div>
+                    <div class = "overlay">Teachers achieve readiness for learning by constructing tasks or offering learning choices at different levels of complexity.</div>
                 </div>
             </form>
         </div>
@@ -54,17 +54,11 @@
         <div id = "all">
             <br>
             <div class = "techtip-wrap">
-
-                <% if(content[0].length==0){ %>
-                    <div>
-                        <h4>There is nothing here</h4>
-                    </div>
-                <% } else { %>
-
+                <% let add = 0; %>
+                
                 <% for(let i=0; i<content[0].length; i++){ %>
-
                 <% if((content[1][i]["R"]&&checked[0])||(content[1][i]["TP"]&&checked[1])||(content[1][i]["MT"]&&checked[2])||(content[1][i]["AR"]&&checked[3])){ %>
-
+                <% add++ %>
                 <div class = "techtip" id = "<%=i%>">
                     <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
@@ -83,7 +77,7 @@
                         <% } %>
                     </div>
                     <div class = "info">
-                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["techname"] %>.png"></div>
+                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["id"] %>.png"></div>
                         <div class = "desc"><%= content[0][i]["tl1_desc"] %></div>
                         <div class = "link">
                             <ul>
@@ -94,6 +88,11 @@
                 </div>
                 <% } %> 
                 <% } %>
+
+                <% if(add==0){ %>
+                    <div>
+                        <h4>No results here match your filters.</h4>
+                    </div>
                 <% } %>
             </div>
             <br>

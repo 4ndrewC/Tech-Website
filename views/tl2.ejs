@@ -2,7 +2,7 @@
     <head>
         <title>TL2: Strategies</title>
         <link rel = "stylesheet" href = "../public/main.css">
-        <link rel = "icon" href = "icon.png">
+        <link rel = "icon" type = "image/png" href = "/testuploads/favicon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
         <meta charset = "utf-8">
     </head>
@@ -17,12 +17,12 @@
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
                 <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>   
-                <!-- <span id = "search">
-                    <form action="/tl2/:query" method="get">
-                        <input type="text" name="query" placeholder="Search" value="<%=queryResult%>">
-                        <input type="submit" value="Submit">
-                    </form>
-                </span> -->
+                <span id = "search">
+                    <form action="/searchpage/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Search">
+                    </form>    
+                </span>     
             </ul>           
         </div>
 
@@ -32,23 +32,23 @@
             <form class = "filters" method = "post" action='/tl2'>
                 <div class = "label">
                     <span class = "n1">Understanding <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">IN ORDER TO MEET SPECIFIC LEARNING OBJECTIVES, THE TEACHER ENSURES THAT UNDERSTANDING IS EXPLORED, CONSTRUCTED AND CONFIRMED BY THE CLASS.</div>
+                    <div class = "overlay">In order to meet specific learning objectives, the teacher ensures that understanding is explored, constructed and confirmed by the class.</div>
                 </div>
                 <div class = "label">
                     <span class = "n2">Multi-Dimensional Learning <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS CONSTRUCT MULTI-DIMENSIONAL LEARNING EXPERIENCES THAT ARE RELEVANT TO THE STUDENT, EMBEDDED IN REAL-WORLD CONTEXTS AND OFTEN STUDENT-INITIATED.</div>
+                    <div class = "overlay">Teachers construct multi-dimensional learning experiences that are relevant to the student, embedded in real-world contexts and often student-initiated.</div>
                 </div>
                 <div class = "label">
                     <span class = "n3">Reasoned Arguments <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS ENABLE STUDENTS TO USE REASONED ARGUMENTS AND ACTIVE LISTENING AS AN INTEGRAL PART OF KNOWLEDGE BUILDING AND DIVERSE PERSPECTIVES ARE WELCOMED AND CONSIDERED.</div>
+                    <div class = "overlay">Teachers enable students to use reasoned arguments and active listening as an integral part of knowledge building and diverse perspectives are welcomed and considered.</div>
                 </div>
                 <div class = "label">
                     <span class = "n4">Repertoire of Techniques <input type = "checkbox" name = "s4" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS EMPLOY A REPERTOIRE OF TECHNIQUES, INCLUDING WHOLE CLASS INSTRUCTION, WHOLE CLASS COLLECTIVE DISCUSSION, PAIRED TALK AND SMALL GROUP DIALOGUE TO SUPPORT LEARNING. </div>
+                    <div class = "overlay">Teachers employ a repertoire of techniques, including whole class instruction, whole class collective discussion, paired talk and small group dialogue to support learning. </div>
                 </div>
                 <div class = "label">
                     <span class = "n5">Learning Spaces <input type = "checkbox" name = "s5" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS PURPOSEFULLY DESIGN LEARNING SPACES TO PROMOTE THE INTENDED LEARNING IMPACT.</div>
+                    <div class = "overlay">Teachers purposefully design learning spaces to promote the intended learning impact.</div>
                 </div>
             </form>
         </div>
@@ -58,47 +58,47 @@
         <div id = "all">
             <br>    
             <div class = "techtip-wrap">
-                <% if(content[0].length==0){ %>
+                <% let add = 0; %>
+                
+                <% for(let i=0; i<content[0].length; i++){ %>
+                <% if((content[1][i]["U"]&&checked[0])||(content[1][i]["MDL"]&&checked[1])||(content[1][i]["RA"]&&checked[2])||(content[1][i]["RoTech"]&&checked[3])||(content[1][i]["LS"]&&checked[4])){ %>
+                <% add++ %>
+                <div class = "techtip">
+                    <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
+                    <h3 class="name"><%= content[0][i]["techname"] %></h3>
+                    <div class = "tags">
+                        <% if(content[1][i]["U"]){ %>
+                            <span class = "n1">Understanding</span>
+                        <% } %>
+                        <% if(content[1][i]["MDL"]){ %>
+                            <span class = "n2">Multi-Dimensional Learning</span>
+                        <% } %>
+                        <% if(content[1][i]["RA"]){ %>
+                            <span class = "n3">Reasoned Arguments</span>
+                        <% } %>
+                        <% if(content[1][i]["RoTech"]){ %>
+                            <span class = "n4">Repertoire of Techniques</span>
+                        <% } %>
+                        <% if(content[1][i]["LS"]){ %>
+                            <span class = "n5">Learning Spaces</span>
+                        <% } %>
+                    </div>
+                    <div class = "info">
+                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["id"]%>.png"></div>
+                        <div class = "desc"><%= content[0][i]["tl2_desc"] %></div>
+                        <div class = "link">
+                            <ul>
+                                <li><a href = "<%= content[0][i]["link"] %>"  target="_blank"><%= content[0][i]["displaytext"] %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <% } %> 
+                <% } %>
+                <% if(add==0){ %>
                     <div>
-                        <h4>There is nothing here</h4>
+                        <h4>No results here match your filters.</h4>
                     </div>
-                <% } else { %>
-                    <% for(let i=0; i<content[0].length; i++){ %>
-
-                    <% if((content[1][i]["U"]&&checked[0])||(content[1][i]["MDL"]&&checked[1])||(content[1][i]["RA"]&&checked[2])||(content[1][i]["RoTech"]&&checked[3])||(content[1][i]["LS"]&&checked[4])){ %>
-
-                    <div class = "techtip">
-                        <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
-                        <h3 class="name"><%= content[0][i]["techname"] %></h3>
-                        <div class = "tags">
-                            <% if(content[1][i]["U"]){ %>
-                                <span class = "n1">Understanding</span>
-                            <% } %>
-                            <% if(content[1][i]["MDL"]){ %>
-                                <span class = "n2">Multi-Dimensional Learning</span>
-                            <% } %>
-                            <% if(content[1][i]["RA"]){ %>
-                                <span class = "n3">Reasoned Arguments</span>
-                            <% } %>
-                            <% if(content[1][i]["RoTech"]){ %>
-                                <span class = "n4">Repertoire of Techniques</span>
-                            <% } %>
-                            <% if(content[1][i]["LS"]){ %>
-                                <span class = "n5">Learning Spaces</span>
-                            <% } %>
-                        </div>
-                        <div class = "info">
-                            <div class = "img"><img src = "/testuploads/<%=content[0][i]["techname"]%>.png"></div>
-                            <div class = "desc"><%= content[0][i]["tl2_desc"] %></div>
-                            <div class = "link">
-                                <ul>
-                                    <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %> 
-                    <% } %>
                 <% } %>
             </div>
             <br>

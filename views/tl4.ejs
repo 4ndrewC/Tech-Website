@@ -2,7 +2,7 @@
     <head>
         <title>TL4: Crafting</title>
         <link rel = "stylesheet" href = "../public/main.css">
-        <link rel = "icon" href = "icon.png">
+        <link rel = "icon" type = "image/png" href = "/testuploads/favicon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
         <meta charset = "utf-8">
     </head>
@@ -17,12 +17,12 @@
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
                 <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
-                <!-- <span id = "search">
-                    <form action="/tl4/:query" method="get">
-                        <input type="text" name="query" placeholder="Search" value="<%=queryResult%>">
-                        <input type="submit" value="Submit">
-                    </form>
-                </span> -->
+                <span id = "search">
+                    <form action="/searchpage/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Search">
+                    </form>    
+                </span>     
             </ul>
         </div>
         <div id = "subhead">
@@ -31,15 +31,15 @@
             <form class = "filters" method = "post" action='/tl4'>
                 <div class = "label">
                     <span class = "n1">Risk-Taking Environment <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS CREATE LEARNING ENVIRONMENTS THAT WELCOME RISK TAKING AND ARE APPROPRIATE, CHALLENGING AND FREQUENTLY FASCINATING TO STUDENTS.</div>
+                    <div class = "overlay">Teachers create learning environments that welcome risk taking and are appropriate, challenging and frequently fascinating to students.</div>
                 </div>
                 <div class = "label">
                     <span class = "n2">Deepening Lines of Inquiry <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS DESIGN ACTIVITIES THAT LEAD TO DEEPENING LINES OF INQUIRY AND THE SHARING OF IDEAS.</div>
+                    <div class = "overlay">Teachers design activities that lead to deepening lines of inquiry and the sharing of ideas.</div>
                 </div>
                 <div class = "label">
                     <span class = "n3">Responsibility and Aspects of Citizenship <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS CRAFT ACTIVITIES THAT ENABLE STUDENTS TO DEVELOP RESPONSIBILITY AND ASPECTS OF CITIZENSHIP.</div>
+                    <div class = "overlay">Teachers craft activities that enable students to develop responsibility and aspects of citizenship.</div>
                 </div>
             </form>
         </div>
@@ -48,17 +48,11 @@
         <div id = "all">              
             <br>    
             <div class = "techtip-wrap">
-
-                <% if(content[0].length==0){ %>
-                    <div>
-                        <h4>There is nothing here</h4>
-                    </div>
-                <% } else { %>
+                <% let add = 0; %>
 
                 <% for(let i=0; i<content[0].length; i++){ %>
-
                 <% if((content[1][i]["RTE"]&&checked[0])||(content[1][i]["DLoI"]&&checked[1])||(content[1][i]["RaAoC"]&&checked[2])){ %>
-
+                <% add++ %>
                 <div class = "techtip">
                     <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
@@ -74,17 +68,21 @@
                         <% } %>
                     </div>
                     <div class = "info">
-                       <div class = "img"><img src = "/testuploads/<%=content[0][i]["techname"]%>.png"></div>
+                       <div class = "img"><img src = "/testuploads/<%=content[0][i]["id"]%>.png"></div>
                         <div class = "desc"><%= content[0][i]["tl4_desc"] %></div>
                         <div class = "link">
                             <ul>
-                                <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
+                                <li><a href = "<%= content[0][i]["link"] %>" target="_blank"><%= content[0][i]["displaytext"] %></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <% } %> 
                 <% } %>
+                <% if(add==0){ %>
+                    <div>
+                        <h4>No results here match your filters.</h4>
+                    </div>
                 <% } %>
             </div>
             <br>

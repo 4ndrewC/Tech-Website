@@ -1,0 +1,32 @@
+///////////////////////////////////////////////////////////////////////////////////
+// 
+// Advanced Power of PHP
+// ---------------------
+// https://www.apphp.com
+// 
+// ApPHP WebsiteCleaner
+// Version: 1.1.6
+//
+///////////////////////////////////////////////////////////////////////////////////
+
+Software requirements: PHP 5.0 or later version.
+
+To install ApPHP WebsiteCleaner, you should have to extract the script
+ZIP file. It depends on the operating system you use. Once extracted, you will have a
+directory containing the ApPHP WebsiteCleaner script.
+
+Upload all content of this directory to your webserver, either by copying the 
+directory or by using an FTP program.
+
+Type in your browser index.php
+
+If you are running on your own computer, this will be
+
+   http://localhost/{website-directory}/index.php
+
+or if on a live server:
+
+   http://{www.mydomain.com}/index.php
+   
+Congratulations, you now have ApPHP WebsiteCleaner installed!   
+

@@ -44,12 +44,12 @@ router.get("/", async (req, res) => {
             }
         }
         tags.push(subdict);
-        console.log(subdict);
+        //console.log(subdict);
     }
     content.push(tools);
     content.push(tags);
     console.log(content);
-    console.log(content[0].length);
+    //console.log(content[0].length);
     // console.log(tools)
     res.render('tl2', {content: content, checked, input, queryResult});
 })  

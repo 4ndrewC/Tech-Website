@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ApPHP WebsiteCleaner :: Getting Started</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style>
+        BODY {
+            padding: 5px 10px;
+            font-family: "Lucida Sans Unicode";
+            font-size: 14px;
+        }
+        PRE{
+            background-color: #f1f2f3;
+            border: 1px solid #cccccc;
+            padding: 3px 5px;
+        }
+        .comments { color:#7a7a7a; }
+        .code { color:#000096; }
+        .darkred { color:darkred; }
+        .listHeading1{ font-weight: bold; font-size: 14px; }
+        .listHeading2{ font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<!-- last update 03.09.2014 -->
+<div class="box">
+<h2>Getting Started with ApPHP WebsiteCleaner (v1.0.0 or above)</h2>
+<div class="holder">
+<div class="frame-box">
+
+<div class="blocks-holder">
+<div class="block-long">
+	<div class="text-box">
+
+		<ul style="padding-left:1px;list-style:none;font-size:14px;">
+			<li><span>1.</span> <a href="GettingStarted.html#Common_Notices"><span>Common Notices.</span></a><br/></li>
+			<li><span>2.</span> <a href="GettingStarted.html#GettingStarted"><span>Getting Started.</span></a><br/>
+			<ul style="list-style:none;">	  
+				<li><span>2.1</span> <a href="GettingStarted.html#CacheFiles_Settings"><span>Cache Files Settings.</span></a></li>
+                <li><span>2.2</span> <a href="GettingStarted.html#ThumbFiles_Settings"><span>Thumb Files Settings.</span></a></li>
+                <li><span>2.3</span> <a href="GettingStarted.html#ErrorLog_Settings"><span>ErrorLog Files Settings.</span></a></li>
+                <li><span>2.4</span> <a href="GettingStarted.html#Infected_Settings"><span>Infected Files Settings.</span></a></li>
+                <li><span>2.5</span> <a href="GettingStarted.html#LastChanges_Settings"><span>Last Changed Files Settings.</span></a></li>
+			</ul>
+			</li>
+		</ul>
+		<br><br>
+		
+	  
+		<a name="Common_Notices"></a>	  
+		<h3 class="sub-title">1. Common Notices</h3>
+		<font color="darkred">&#8226; Be careful when deleting unneeded files - this may harm your computer.</font><br/>
+		<p><br /></p>
+		
+		<a name="GettingStarted"></a>
+        <h3 class="sub-title"><b>2. Getting Started</b></h3>
+		
+		<a name="CacheFiles_Settings"></a>		
+		<h3>2.1. Cache Files Settings.</h3>
+		<hr>
+			Open inclide/settings.inc.php to configure the script. Below you can see the configuration settings:
+            These settings gives you possibility to define cache files extension and whether to allow deleting
+            these files or not.
+            <br>
+<pre>
+<span class="comments">// cache files settings</span>
+<span class="code">define('_CACHE_FILE_EXTENSION', '.cch');
+define('_CACHE_ALLOW_DELETING', true); 
+</span></pre>
+			<p><br /></p>
+
+
+		<a name="ThumbFiles_Settings"></a>		
+		<h3>2.2. Thumb Files Settings.</h3>
+		<hr>            
+            These settings gives you possibility to define whether to allow deleting of thumbnail files or not.
+            <br>
+<pre>
+<span class="comments">// thumb files settings</span>
+<span class="code">define('_THUMB_ALLOW_DELETING', true); 
+</span></pre>
+			<p><br /></p>
+            
+            
+		<a name="ErrorLog_Settings"></a>		
+		<h3>2.3. ErrorLog Files Settings.</h3>
+		<hr>
+			These settings allows you to define errorlog files and whether to allow deleting of these files or not.
+            <br>
+<pre>
+<span class="comments">// errorlog files settings</span>
+<span class="code">define('_ERRORLOG_FILE_NAME', 'error_log');
+define('_ERRORLOG_ALLOW_DELETING', true); 
+</span></pre>
+			<p><br /></p>
+
+
+
+		<a name="Infected_Settings"></a>		
+		<h3>2.4. Infected Files Settings.</h3>
+		<hr>
+			These settings allows you to define configuration for infected files.
+            <br>
+<pre>
+<span class="comments">// infected files settings</span>
+<span class="code">define('_INFECTED_SEARCH_STRING', 'eval(');
+define('_INFECTED_REPLACE_STRING', '');
+define('_INFECTED_ALLOW_DELETING', false);
+define('_INFECTED_ALLOW_CLEANING', true);
+$_INFECTED_ALLOWED_EXTENSIONS = array('.php', '.txt', '.htm', '.html', '.js');
+</span></pre>
+			<p><br /></p>
+
+
+
+		<a name="LastChanges_Settings"></a>		
+		<h3>2.5. Last Changed Files Settings.</h3>
+		<hr>
+			These settings allows you to define configuration for last changed files.
+            <br>
+<pre>
+<span class="comments">// last changed files settings</span>
+<span class="code">define('_CHANGED_DIFF_HOURS', 24);
+define('_CHANGED_IGNORE_CACHE_FILES', true);
+</span></pre>
+			<p><br /></p>
+            <p><br /></p>
+
+
+	</div>
+	</div>
+</div>
+
+<div class="frame-box-holder"></div>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

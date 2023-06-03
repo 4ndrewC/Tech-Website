@@ -26,12 +26,14 @@ router.post('/', function (req, res, next) {
     //     req.session.islogin=false
     //     res.send({ status:0, msg:'fails'})     
     // }    
-    const sqlstr = 'SELECT PW, User from login where id = 0'
+    const sqlstr = 'SELECT PW, User from login'
     db.query(sqlstr, (err, results) => {
         if (err) return res.cc(err)
 
         console.log(results);
-        if (pw === results[0].PW && us === results[0].User){
+        const match = results.find((row) => row.PW === pw && row.User === us);
+
+        if (match){
             req.session.islogin=true  
             res.redirect("/admin")      
         }
@@ -41,7 +43,5 @@ router.post('/', function (req, res, next) {
         }    
     })    
 })
-
-
 
 module.exports = router

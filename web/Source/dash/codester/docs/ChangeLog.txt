@@ -1,0 +1,38 @@
+1. Bugs: [fixed] on empty $ignoredSubDirectories
+
+================================================================================
+- Version 1.1.6 [18.11.2015]
+================================================================================
+1. Feature: [added] progress bar (steps): Start Page > Settings > Results
+2. Feature: [added] option to select/unselect all options in settings
+3. Feature: [added] possibility to define ignored directories
+4. Feature: [added] possibility to define PHP script running time 
+5. Feature: [added] multi-language support and translation in Russian
+5. Feature: [added] possibility to search for malware from database
+1. Feature: [improved] changed colored texts when found/not found infected files
+2. Feature: [improved] javascript handlers on main page
+3. Feature: [improved] minor changes in CSS styling
+4. Feature: [improved] deleting alert is defined for each found file
+5. Feature: [improved] possibility to define period for last changed files
+6. Feature: [improved] messaging in script
+
+================================================================================
+- Version 1.0.2 [27.07.2014]
+================================================================================
+1. Feature: [added] search option for infected files
+1. Feature: [added] search option for error log files
+2. Feature: [improved] minor changes in search routine
+4. Bugs: [fixed] warning on preg_match() function
+
+
+================================================================================
+- Version 1.0.1 [12.06.2014]
+================================================================================
+1. Feature: [added] last changed files
+2. Feature: [improved] minor changes in search routine
+
+
+================================================================================
+- Version 1.0.0 [03.05.2014]
+================================================================================
+Initial Release

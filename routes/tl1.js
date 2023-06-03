@@ -7,6 +7,9 @@ router.get("/", async (req, res) => {
     // const links = await db.promise().query(`select link from submission`);
     // console.log(links[0][0].link)
     console.log("yes")
+
+
+    
     var queryResult="";
     //input = search phrase
     var input = "";
@@ -61,6 +64,9 @@ router.get("/", async (req, res) => {
 
 //filtering, same structure as router.get("/")
 router.post('/', async (req,res) =>{
+
+    
+
     var queryResult="";
     var input = "";
     var checked = new Array(req.body.s1, req.body.s2, req.body.s3, req.body.s4); 

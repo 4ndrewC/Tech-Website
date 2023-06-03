@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/nvm-0.38.0/v0.8.21/bin/node',
+1 verbose cli   '/usr/local/nvm-0.38.0/v0.8.21/bin/npm',
+1 verbose cli   'start' ]
+2 info using npm@1.2.11
+3 info using node@v0.8.21
+4 verbose read json /www/wwwroot/jc2/Basis-Tech-Website/package.json
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart school-tech-website@1.0.0
+7 info start school-tech-website@1.0.0
+8 verbose unsafe-perm in lifecycle true
+9 silly exec sh "-c" "node server.js"
+10 silly sh,-c,node server.js,/www/wwwroot/jc2/Basis-Tech-Website spawning
+11 info school-tech-website@1.0.0 Failed to exec start script
+12 error school-tech-website@1.0.0 start: `node server.js`
+12 error `sh "-c" "node server.js"` failed with 1
+13 error Failed at the school-tech-website@1.0.0 start script.
+13 error This is most likely a problem with the school-tech-website package,
+13 error not with npm itself.
+13 error Tell the author that this fails on your system:
+13 error     node server.js
+13 error You can get their info via:
+13 error     npm owner ls school-tech-website
+13 error There is likely additional logging output above.
+14 error System Linux 3.10.0-1160.71.1.el7.x86_64
+15 error command "/usr/local/nvm-0.38.0/v0.8.21/bin/node" "/usr/local/nvm-0.38.0/v0.8.21/bin/npm" "start"
+16 error cwd /www/wwwroot/jc2/Basis-Tech-Website
+17 error node -v v0.8.21
+18 error npm -v 1.2.11
+19 error code ELIFECYCLE
+20 verbose exit [ 1, true ]

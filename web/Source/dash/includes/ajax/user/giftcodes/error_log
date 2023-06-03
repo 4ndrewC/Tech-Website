@@ -1,0 +1,2 @@
+[08-Mar-2022 19:26:16 UTC] PHP Notice:  Undefined index: user in /home/getssad/public_html/includes/ajax/user/giftcodes/redeem.php on line 29
+[08-Mar-2022 19:26:16 UTC] PHP Notice:  Undefined index: code in /home/getssad/public_html/includes/ajax/user/giftcodes/redeem.php on line 31

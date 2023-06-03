@@ -1,0 +1,29 @@
+function csvout(){
+    csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "id, techname, tl1 description, tl2 description, tl3 description, tl4 description, link, displaytext, accepted, username, contact,"; 
+    csvContent += "R, TP, MT, AR, U, MDL, RA, RoTech, LS,RoThink, EoST, EF, RTE, DLoI, RaAoC,";
+    csvContent += "\r\n";
+    <% for(let i=0; i<results.length; i++){ %>
+        csvContent += "<%=results[i].id %>" + ",";
+        csvContent += "<%=results[i].techname%>" + ",";
+        csvContent += "<%=results[i].tl1_desc%>" + ",";
+        csvContent += "<%=results[i].tl2_desc%>" + ",";
+        csvContent += "<%=results[i].tl3_desc%>" + ",";
+        csvContent += "<%=results[i].tl4_desc%>" + ",";
+        csvContent += "<%=results[i].link%>" + ",";
+        csvContent += "<%=results[i].displaytext%>" + ",";
+        csvContent += "<%=results[i].accepted%>" + ",";
+        csvContent += "<%=results[i].username%>" + ",";
+        csvContent += "<%=results[i].contact%>" + ",";
+        csvContent += "\r\n";
+    <% } %>
+    
+    var now = new Date();
+    var log = "BGTechTools updated " + now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()+" "+now.getHours()+""+now.getMinutes();
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", log + ".csv");
+    document.body.appendChild(link); 
+    link.click(); 
+}

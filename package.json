@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "server.js"
+    "devStart": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,22 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "nodemon": "^2.0.20"
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "fuse": "^0.4.0",
+    "fuse.js": "^6.6.2",
+    "jquery": "^3.6.4",
+    "mysql2": "^3.1.0",
+    "node-gyp": "^9.3.1",
+    "nodemon": "^2.0.21",
+    "pm2": "^5.2.2",
+    "pm2-web": "^2.1.3",
+    "winston": "^3.8.2",
+    "xlsx": "^0.18.5",
+    "yargs": "^17.6.2",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "node-xlsx": "^0.21.0"
   }
 }

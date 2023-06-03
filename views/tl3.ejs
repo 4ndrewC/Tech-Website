@@ -2,7 +2,7 @@
     <head>
         <title>TL3: Evidence</title>
         <link rel = "stylesheet" href = "../public/main.css">
-        <link rel = "icon" href = "icon.png">
+        <link rel = "icon" type = "image/png" href = "/testuploads/favicon.png">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
         <meta charset = "utf-8">
     </head>
@@ -17,12 +17,12 @@
                 <a href = "/tl2"><li>Strategies (TL2)</li><div class = "underline"></div></a>
                 <a href = "/tl3"><li>Evidence (TL3)</li><div class = "underline"></div></a>
                 <a href = "/tl4"><li>Crafting (TL4)</li><div class = "underline"></div></a>
-                <!-- <span id = "search">
-                    <form action="/tl3/:query" method="get">
-                        <input type="text" name="query" placeholder="Search" value="<%=queryResult%>">
-                        <input type="submit" value="Submit">
-                    </form>
-                </span> -->
+                <span id = "search">
+                    <form action="/searchpage/:query" method="get">
+                        <input type="text" name="query" placeholder="Search">
+                        <input type="submit" value="Search">
+                    </form>    
+                </span>     
             </ul>           
         </div>
         <div id = "subhead">
@@ -31,15 +31,15 @@
             <form class = "filters" method = "post" action='/tl3'>
                 <div class = "label">
                     <span class = "n1">Reflect on Thinking <input type = "checkbox" name = "s1" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS PROVIDE CLEARLY SIGNALED OPPORTUNITIES FOR STUDENTS TO REFLECT ON THEIR OWN THINKING, AND THAT OF OTHERS, EXPLAINING AND JUSTIFYING THEIR OPINIONS.</div>
+                    <div class = "overlay">Teachers provide clearly signaled opportunities for students to reflect on their own thinking, and that of others, explaining and justifying their opinions.</div>
                 </div>
                 <div class = "label">
                     <span class = "n2">Evidence of Student Learning <input type = "checkbox" name = "s2" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS USE EVIDENCE OF STUDENT LEARNING TO MAKE JUDGMENTS ON STUDENT ACHIEVEMENT AGAINST STATED OBJECTIVES.</div>
+                    <div class = "overlay">Teachers use evidence of student learning to make judgments on student achievement against stated objectives.</div>
                 </div>
                 <div class = "label">
                     <span class = "n3">Employ Feedback <input type = "checkbox" name = "s3" class = "checkf" value = "1" onchange='this.form.submit()'></span>
-                    <div class = "overlay">TEACHERS EMPLOY FEEDBACK CONSTRUCTIVELY TO ENCOURAGE SELF-REFLECTION AND SELF-ASSESSMENT.</div>
+                    <div class = "overlay">Teachers employ feedback constructively to encourage self-reflection and self-assessment.</div>
                 </div>
             </form>
         </div>
@@ -49,17 +49,11 @@
         <div id = "all">
             <br>    
             <div class = "techtip-wrap">
-
-                <% if(content[0].length==0){ %>
-                    <div>
-                        <h4>There is nothing here</h4>
-                    </div>
-                <% } else { %>
+                <% let add = 0; %>
 
                 <% for(let i=0; i<content[0].length; i++){ %>
-
                 <% if((content[1][i]["RoThink"]&&checked[0])||(content[1][i]["EoST"]&&checked[1])||(content[1][i]["EF"]&&checked[2])&&checked[3]){ %>
-
+                <% add++ %>
                 <div class = "techtip">
                     <div class = "line" id = "<%=content[0][i]["id"]%>"></div>
                     <h3 class="name"><%= content[0][i]["techname"] %></h3>
@@ -75,17 +69,21 @@
                         <% } %>
                     </div>
                     <div class = "info">
-                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["techname"]%>.png"></div>
+                        <div class = "img"><img src = "/testuploads/<%=content[0][i]["id"]%>.png"></div>
                         <div class = "desc"><%= content[0][i]["tl3_desc"] %></div>
                         <div class = "link">
                             <ul>
-                                <li><a href = "<%= content[0][i]["link"] %>"><%= content[0][i]["displaytext"] %></a></li>
+                                <li><a href = "<%= content[0][i]["link"] %>"  target="_blank"><%= content[0][i]["displaytext"] %></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <% } %> 
                 <% } %> 
+                <% if(add==0){ %>
+                    <div>
+                        <h4>No results here match your filters.</h4>
+                    </div>
                 <% } %>
             </div>
             <br>

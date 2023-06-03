@@ -1,8 +1,9 @@
 const mysql = require('mysql2')
 
 module.exports = mysql.createConnection({
-    host: 'localhost',
-    user: 'basis',
-    password: 'basis123',
-    database: 'basistechtools',
+    host: '175.178.17.67',
+    port: 3306,
+    user: '175_178_17_67',
+    password: 'Basis2023',
+    database: '175_178_17_67',
 })
