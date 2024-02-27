@@ -1,4 +1,4 @@
-# Basis-Tech-Website
+# Tech-Website
 _**Please read this stuff, it's quite important**_
 
 **Public folder (frontend):**
@@ -42,5 +42,3 @@ npm install express just starts an express app, including downloading all the no
 **Using Github**
 
 Last but not least, make pull requests to upload changes, cuz that's how github works. If u don't know how to use github, then look up a tutorial or learn from other members.
-
-Good luck on this project everyone!
